@@ -88,10 +88,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'lds_www',
-        'USER': '',
-        'PASSWORD': 'db-pass',
-        'HOST': 'localhost',
-        'PORT': 5432,
+        # 'USER': '',
+        # 'PASSWORD': 'db-pass',
+        # 'HOST': 'localhost',
+        # 'PORT': 5432,
     }
 }
 
