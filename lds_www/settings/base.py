@@ -13,11 +13,14 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 import dj_database_url
+from dotenv import load_dotenv
 
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
 
 
+load_dotenv(os.path.join(BASE_DIR, ".env"))
+SECRET_KEY = os.getenv("SECRET_KEY")
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
@@ -80,22 +83,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "lds_www.wsgi.application"
-
-
-# Database
-# https://docs.djangoproject.com/en/4.1/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'lds_www',
-#         # 'USER': '',
-#         # 'PASSWORD': 'db-pass',
-#         # 'HOST': 'localhost',
-#         # 'PORT': 5432,
-#     }
-# }
-
 
 
 DATABASE_URL = os.getenv("DATABASE_URL")
@@ -178,3 +165,4 @@ WAGTAILSEARCH_BACKENDS = {
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
 WAGTAILADMIN_BASE_URL = "http://example.com"
 ALLOWED_HOSTS = ['*']
+
