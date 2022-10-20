@@ -1,7 +1,7 @@
 from .base import *
 
 DEBUG = False
-ALLOWED_HOSTS = ['0.0.0.0:$PORT']
+ALLOWED_HOSTS = ['ldswww-production.up.railway.app']
 
 try:
     from .local import *
