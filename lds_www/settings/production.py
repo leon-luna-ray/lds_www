@@ -1,7 +1,7 @@
 from .base import *
 
-DEBUG = False
-
+DEBUG = True
+ALLOWED_HOSTS = ['*',]
 
 try:
     from .local import *
