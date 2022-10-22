@@ -1,10 +1,10 @@
 from .base import *
+import os
 
 DEBUG = False
-ALLOWED_HOSTS = ['ldswww-production.up.railway.app']
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS')
 STATICFILES_STORAGE="whitenoise.storage.CompressedManifestStaticFilesStorage"
-
-
+CSRF_TRUSTED_ORIGINS = os.getenv('CSRF_TRUSTED_ORIGINS')
 
 COMPRESS_OFFLINE = True
 COMPRESS_CSS_FILTERS = [
