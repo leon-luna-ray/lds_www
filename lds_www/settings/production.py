@@ -17,6 +17,13 @@ COMPRESS_CSS_HASING_METHOD = 'content'
 DEFAULT_FILE_STORAGE = 'lds_www.settings.storage_backends.MediaStorage'
 
 
+DATABASE_URL = os.getenv("DATABASE_URL")
+
+DATABASES = {
+    "default": dj_database_url.config(default=DATABASE_URL, conn_max_age=1800),
+}
+
+
 
 
 
