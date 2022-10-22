@@ -10,6 +10,7 @@ SECRET_KEY = "django-insecure-!rog!p!*u37&a(2*9rqem3mjpx91^cpy7_is(oze7&zeum6eq1
 ALLOWED_HOSTS = ["*"]
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+STATICFILES_STORAGE = "django.contrib.staticfiles.storage.ManifestStaticFilesStorage"
 
 
 try:
