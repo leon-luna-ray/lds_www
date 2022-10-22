@@ -21,6 +21,8 @@ DATABASES = {
     }
 }
 
+MEDIA_URL = "/media/"
+
 
 try:
     from .local import *
