@@ -1,6 +1,6 @@
-# Luna Dental Studio Org CMS
+# Luna Dental Studio CMS
 ## In develpoment. 🚧
-This is the repository for Luna Dental Studio org site. It is a full stack application build on Django and Wagtail CMS.
+This is the repository for Luna Dental Studio org site. It is a full stack application built with Django and Wagtail CMS.
 
 Current Site: (https://ldswww-production.up.railway.app/)
 
@@ -15,6 +15,7 @@ Current Site: (https://ldswww-production.up.railway.app/)
 ### Backend
 * Python
 * Django
-* Postgres
+* Wagtail
+* PostgreSQL
 * Railway
 * AWS S3
