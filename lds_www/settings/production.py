@@ -2,9 +2,9 @@ from .base import *
 import os
 
 DEBUG = False
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS')
+ALLOWED_HOSTS = ['ldswww-production.up.railway.app']
 STATICFILES_STORAGE="whitenoise.storage.CompressedManifestStaticFilesStorage"
-CSRF_TRUSTED_ORIGINS = os.getenv('CSRF_TRUSTED_ORIGINS')
+CSRF_TRUSTED_ORIGINS = ['https://ldswww-production.up.railway.app']
 
 COMPRESS_OFFLINE = True
 COMPRESS_CSS_FILTERS = [
