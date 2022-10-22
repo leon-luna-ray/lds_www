@@ -14,7 +14,7 @@ COMPRESS_CSS_FILTERS = [
 
 COMPRESS_CSS_HASING_METHOD = 'content'
 
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+DEFAULT_FILE_STORAGE = 'lds_www.settings.storage_backends.MediaStorage'
 
 
 
