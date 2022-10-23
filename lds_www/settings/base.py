@@ -75,11 +75,6 @@ TEMPLATES = [
 WSGI_APPLICATION = "lds_www.wsgi.application"
 
 
-DATABASE_URL = os.getenv("DATABASE_URL")
-
-DATABASES = {
-    "default": dj_database_url.config(default=DATABASE_URL, conn_max_age=1800),
-}
 
 
 # Password validation
@@ -112,19 +107,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-# AWS
-
-
-if os.getenv('USE_S3'):
-    AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
-    AWS_S3_ACCESS_KEY_ID = os.getenv('AWS_S3_ACCESS_KEY_ID')
-    AWS_S3_SECRET_ACCESS_KEY = os.getenv('AWS_S3_SECRET_ACCESS_KEY')
-    AWS_S3_CUSTOM_DOMAIN = os.getenv('AWS_S3_CUSTOM_DOMAIN')
-    AWS_QUERY_STRING_AUTH = False
-    AWS_LOCATION = 'static'
-    MEDIA_URL = "https://%s/" % AWS_S3_CUSTOM_DOMAIN
-else:
-    MEDIA_URL = "/media/"
 
 # Static files (CSS, JavaScript, Images)
 STATICFILES_FINDERS = [
