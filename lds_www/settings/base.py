@@ -76,8 +76,6 @@ TEMPLATES = [
 WSGI_APPLICATION = "lds_www.wsgi.application"
 
 
-
-
 # Password validation
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -109,11 +107,21 @@ USE_L10N = True
 USE_TZ = True
 
 # database
-DATABASE_URL = os.getenv("DATABASE_URL")
+ENVIRONMENT = os.getenv("ENV")
 
-DATABASES = {
-    "default": dj_database_url.config(default=DATABASE_URL, conn_max_age=1800),
-}
+if(ENVIRONMENT == 'dev'):
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'lds_www',
+        }
+    }
+
+else:
+    DATABASE_URL = os.getenv("DATABASE_URL")
+    DATABASES = {
+        "default": dj_database_url.config(default=DATABASE_URL, conn_max_age=1800),
+    }
 
 
 # Static files (CSS, JavaScript, Images)

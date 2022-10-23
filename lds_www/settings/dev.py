@@ -14,12 +14,6 @@ EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 STATICFILES_STORAGE = "django.contrib.staticfiles.storage.ManifestStaticFilesStorage"
 
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'lds_www',
-#     }
-# }
 
 MEDIA_URL = "/media/"
 
