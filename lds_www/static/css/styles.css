@@ -510,10 +510,6 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-.static {
-  position: static;
-}
-
 .block {
   display: block;
 }
@@ -526,5 +522,3 @@ video {
 .font-bold {
   font-weight: 700;
 }
-
-/* @import "./layouts/home.css"; */
