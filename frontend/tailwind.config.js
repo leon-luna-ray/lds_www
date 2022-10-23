@@ -1,8 +1,7 @@
 
 module.exports = {
   content: [
-    "../home",
-    "../lds_www",
+    "../**/*.html",
   ],
   theme: {
     extend: {},
