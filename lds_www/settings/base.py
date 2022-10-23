@@ -16,8 +16,7 @@ load_dotenv(os.path.join(BASE_DIR, ".env"))
 SECRET_KEY = os.getenv("SECRET_KEY")
 
 INSTALLED_APPS = [
-    "home",
-    "search",
+
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
     "wagtail.embeds",
@@ -39,6 +38,11 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
 
     "storages",
+
+    # Project Apps
+    "apps.base",
+    "apps.home",
+    "apps.search",
 ]
 
 MIDDLEWARE = [
