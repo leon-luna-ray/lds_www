@@ -3,10 +3,12 @@
 
 {% block content %}
 <div>
-    <h1 class="text-3xl font-bold underline">{{ page.title }}</h1>
+    <h1 class="text-3xl font-bold">{{ page.title }}</h1>
     {{ page.intro_text|richtext }}
-    {% for carousel_image in page.banner_carousel %}
-    {% image carousel_image.value original %}
-    {% endfor %}
+    <div class="banner-carousel">
+        {% for carousel_image in page.banner_carousel %}
+        {% image carousel_image.value width-400 %}
+        {% endfor %}
+    </div>
 </div>
 {% endblock content %}
