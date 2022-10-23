@@ -116,12 +116,13 @@ if(ENVIRONMENT == 'dev'):
             'NAME': 'lds_www',
         }
     }
-
+    print('reading dev')
 else:
     DATABASE_URL = os.getenv("DATABASE_URL")
     DATABASES = {
         "default": dj_database_url.config(default=DATABASE_URL, conn_max_age=1800),
     }
+    print('reading production')
 
 
 # Static files (CSS, JavaScript, Images)
