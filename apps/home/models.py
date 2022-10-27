@@ -31,7 +31,7 @@ class HomePage(BasePage):
 
     # config
     max_count = 1
-    subpage_types = ['home.AboutPage']
+    subpage_types = ['home.AboutPage', 'home.ServicesLandingPage']
     content_panels = Page.content_panels + [
         FieldPanel('intro_text'),
         FieldPanel('banner_carousel'),
@@ -45,3 +45,12 @@ class AboutPage(BasePageWithOptions):
     # config
     max_count = 1
     template = 'home/about.html'
+
+# Services
+class ServicesLandingPage(BasePageWithOptions):
+
+    content_panels = BasePageWithOptions.intro_with_image_panel +[]
+
+    # config
+    max_count = 1
+    template = 'home/services.html'
