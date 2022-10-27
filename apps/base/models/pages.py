@@ -55,7 +55,7 @@ class BasePageWithOptions(BasePage):
         FieldPanel('intro'),
     ]
 
-    intro_with_img_panel = BasePage.content_panels + [
+    intro_with_image_panel = BasePage.content_panels + [
         FieldPanel('intro'),
         FieldPanel('header_image'),
     ]

@@ -22,12 +22,26 @@ class HomePage(BasePage):
         null=True,
     )
 
+
+    # Link Block to other pages (orderable), About and Works
+    # Annoucments/promotions (block)
+    # Featured works (orderable)
+
     intro_text = RichTextField(null=True)
 
     # config
     max_count = 1
-    subpage_types = []
+    subpage_types = ['home.AboutPage']
     content_panels = Page.content_panels + [
         FieldPanel('intro_text'),
         FieldPanel('banner_carousel'),
     ]
+
+# About
+class AboutPage(BasePageWithOptions):
+
+    content_panels = BasePageWithOptions.intro_with_image_panel +[]
+
+    # config
+    max_count = 1
+    template = 'home/about.html'
