@@ -1,0 +1,10 @@
+{% extends "base/base.html" %}
+{% load wagtailcore_tags wagtailimages_tags  %}
+
+{% block content %}
+<div>
+    <h1 class="text-3xl font-bold">{{ page.title }}</h1>
+    {{ page.intro|richtext }}
+    {% image page.header_image width-400 alt=page.header_image.alt_text %}
+</div>
+{% endblock %}

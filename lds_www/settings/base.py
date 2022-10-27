@@ -16,8 +16,7 @@ load_dotenv(os.path.join(BASE_DIR, ".env"))
 SECRET_KEY = os.getenv("SECRET_KEY")
 
 INSTALLED_APPS = [
-    "home",
-    "search",
+
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
     "wagtail.embeds",
@@ -39,6 +38,11 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
 
     "storages",
+
+    # Project Apps
+    "apps.base",
+    "apps.home",
+    "apps.search",
 ]
 
 MIDDLEWARE = [
@@ -141,15 +145,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 # Wagtail settings
 WAGTAIL_SITE_NAME = "Luna Dental Studio"
-
-# Search
-# https://docs.wagtail.org/en/stable/topics/search/backends.html
+WAGTAILIMAGES_IMAGE_MODEL = 'base.AccessibleImage'
+WAGTAILADMIN_BASE_URL = "http://example.com"
 WAGTAILSEARCH_BACKENDS = {
     "default": {
         "BACKEND": "wagtail.search.backends.database",
     }
 }
-
-# Base URL to use when referring to full URLs within the Wagtail admin backend -
-# e.g. in notification emails. Don't include '/admin' or a trailing slash
-WAGTAILADMIN_BASE_URL = "http://example.com"
