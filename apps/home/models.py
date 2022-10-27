@@ -1,12 +1,13 @@
 from django.db import models
-
 from wagtail.models import Page
 from wagtail.fields import RichTextField, StreamField
 from wagtail.admin.panels import FieldPanel
 from wagtail.images.blocks import ImageChooserBlock
 
+from apps.base.models.pages import BasePage, BasePageWithOptions
 
-class HomePage(Page):
+
+class HomePage(BasePage):
     # pass
     banner_carousel = StreamField(
         [

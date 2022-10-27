@@ -1,8 +1,7 @@
 from django.db import models
 from wagtail.core.models import Page
 from wagtail.core.fields import RichTextField
-from wagtail.admin.edit_handlers import FieldPanel
-from wagtail.images.edit_handlers import ImageChooserPanel
+from wagtail.admin.panels import FieldPanel
 
 class BasePage(Page):
     """
@@ -18,7 +17,7 @@ class BasePage(Page):
         related_name='+')
 
     promote_panels = Page.promote_panels + [
-        ImageChooserPanel('preview_thumbnail'),
+        FieldPanel('preview_thumbnail'),
     ]
 
     class Meta:
@@ -58,7 +57,7 @@ class BasePageWithOptions(BasePage):
 
     intro_with_img_panel = BasePage.content_panels + [
         FieldPanel('intro'),
-        ImageChooserPanel('header_image'),
+        FieldPanel('header_image'),
     ]
 
     class Meta:
