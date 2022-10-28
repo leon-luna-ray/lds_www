@@ -1,7 +1,7 @@
 {% load static wagtailcore_tags wagtailuserbar %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
     <head>
         <meta charset="utf-8" />
         <title>
@@ -18,19 +18,37 @@
 
         {# Global stylesheets #}
         <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
-
         {% block extra_css %}
         {# Override this in templates to add extra stylesheets #}
         {% endblock %}
+
+
     </head>
 
     <body class="{% block body_class %}{% endblock %}">
         {% wagtailuserbar %}
-
-        {% block content %}{% endblock %}
+        <header>
+            {% include './nav.html' %}
+        </header>
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+        {% comment %} TODO add footer tag + component {% endcomment %}
 
         {# Global javascript #}
+        <script type="text/javascript" src="{% static 'js/jquery/jquery.min.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+
+        {# Dark mode #}
+        <script>
+            if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark')
+                document.getElementById('white-logo').classList.remove('hidden');
+                } else {
+                document.documentElement.classList.remove('dark')
+                document.getElementById('black-logo').classList.remove('hidden');
+                }
+        </script>
 
         {% block extra_js %}
         {# Override this in templates to add extra javascript #}
