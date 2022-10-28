@@ -10,7 +10,7 @@ Current Production Site: https://ldswww-production.up.railway.app/
 * JQuery (v3.6.1) 
 * HTML
 * CSS
-* Tailwind
+* Tailwind CSS
 
 ### Backend
 * Python (v3.10)
