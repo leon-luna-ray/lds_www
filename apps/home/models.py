@@ -23,7 +23,7 @@ class HomePage(BasePage):
     )
 
 
-    # Link Block to other pages (orderable), About and Works
+    # Link Block to other pages (block (image + text + page or url))
     # Annoucments/promotions (block)
     # Featured works (orderable)
 

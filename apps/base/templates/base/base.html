@@ -27,7 +27,15 @@
     <body class="{% block body_class %}{% endblock %}">
         {% wagtailuserbar %}
 
-        {% block content %}{% endblock %}
+        
+        <header>
+            {% include './nav.html' %}
+        </header>
+
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+        {% comment %} TODO add footer tag + component {% endcomment %}
 
         {# Global javascript #}
         <script type="text/javascript" src="{% static 'js/main.js' %}"></script>

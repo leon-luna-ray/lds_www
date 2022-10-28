@@ -1,0 +1,15 @@
+{% load static %}
+
+<div id="site-header" class="flex justify-between px-5 py-4">
+    <div class="header-logo">
+        <img class="w-[250px]" src="{% static 'images/logos/Logo-Dental Luna_Blanco.png' %}" alt="Logotipo de Luna Dental Studio">
+    </div>
+    <nav class="flex w-[45%] justify-evenly">
+        <h4>Inicio</h4>
+        <h4>Laboratorio</h4>
+        <h4>Servicios</h4>
+        <h4>Trabajos</h4>
+        {% comment %} <button>Light/Dark</button> {% endcomment %}
+        {% include './blocks/dark_mode_btn.html' %}
+    </nav>
+</div>
