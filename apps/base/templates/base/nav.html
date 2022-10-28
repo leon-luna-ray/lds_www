@@ -1,15 +1,27 @@
 {% load static %}
 
 <div id="site-header" class="flex justify-between px-[2.25rem] py-4 mb-5">
-    <div class="header-logo">
-        <img id="white-logo" class="w-[250px] hidden" src="{% static 'images/logos/logo_dental_luna_blanco.png' %}" alt="Luna Dental Studio">
-        <img id="black-logo" class="w-[250px] hidden" src="{% static 'images/logos/logo_dental_luna_negro.png' %}" alt="Luna Dental Studio">
-    </div>
-    <nav class="flex w-[45%] justify-evenly">
-        <h4>Inicio</h4>
-        <h4>Laboratorio</h4>
-        <h4>Servicios</h4>
-        <h4>Trabajos</h4>
-        {% include './blocks/dark_mode_btn.html' %}
-    </nav>
+  <div class="header-logo">
+    <a href="/">
+      <img
+        id="white-logo"
+        class="w-[250px] hidden"
+        src="{% static 'images/logos/logo_dental_luna_blanco.png' %}"
+        alt="Luna Dental Studio"
+      />
+      <img
+        id="black-logo"
+        class="w-[250px] hidden"
+        src="{% static 'images/logos/logo_dental_luna_negro.png' %}"
+        alt="Luna Dental Studio"
+      />
+    </a>
+  </div>
+  <nav class="flex w-[45%] justify-evenly">
+    <h4>Inicio</h4>
+    <h4>Laboratorio</h4>
+    <h4>Servicios</h4>
+    <h4>Trabajos</h4>
+    {% include './blocks/dark_mode_btn.html' %}
+  </nav>
 </div>
