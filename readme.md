@@ -7,15 +7,15 @@ Current Production Site: https://ldswww-production.up.railway.app/
 ## Technologies
 ### Frontend
 * JavaScript
-* JQuery
+* JQuery (v3.6.1) 
 * HTML
 * CSS
-* Tailwind CSS
+* Tailwind
 
 ### Backend
-* Python
-* Django
-* Wagtail
+* Python (v3.10)
+* Django (v4.1.2)
+* Wagtail (v4.0.4)
 * PostgreSQL
 * Railway
 * AWS S3
