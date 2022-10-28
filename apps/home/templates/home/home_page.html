@@ -2,13 +2,13 @@
 {% load wagtailcore_tags wagtailimages_tags  %}
 
 {% block content %}
-<div>
-    <h1 class="text-3xl font-bold">{{ page.title }}</h1>
-    {{ page.intro_text|richtext }}
-    <div class="banner-carousel">
+<div class="container">
+
+    <div class="banner-carousel flex">
         {% for carousel_image in page.banner_carousel %}
         {% image carousel_image.value width-400 %}
         {% endfor %}
     </div>
+    {{ page.intro_text|richtext }}
 </div>
 {% endblock %}
