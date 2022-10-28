@@ -41,6 +41,8 @@
 
         {# Dark mode #}
         <script>
+
+
             if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
                 document.documentElement.classList.add('dark')
                 document.getElementById('white-logo').classList.remove('hidden');
