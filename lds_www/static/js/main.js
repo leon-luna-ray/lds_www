@@ -30,6 +30,4 @@ $(document).ready(function () {
     e.preventDefault();
     toggleDarkMode();
   });
-
-  console.log(darkPreference)
 });
