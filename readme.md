@@ -8,6 +8,7 @@ Current Production Site: https://ldswww-production.up.railway.app/
 ### Frontend
 * JavaScript
 * JQuery (v3.6.1) 
+* Petite-Vue
 * HTML
 * CSS
 * Tailwind CSS

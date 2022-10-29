@@ -1,20 +1,18 @@
-// var app = new Vue({
-//     delimiters: ["[[", "]]"],
-//     el: '#app',
-//     data: {
-//       message: 'Hello Vue!'
-//     }
-//   })
+// import { createApp } from 'https://unpkg.com/petite-vue?module';
 
-import { createApp } from 'https://unpkg.com/petite-vue?module';
+// createApp({
+//   $delimiters: ['[[', ']]'],
+//   el: '#app',
+//   // State
+//   state: {
+//     message: 'Hello Vue!',
+//     darkMode: false,
+//   },
 
-createApp({
-  $delimiters: ['[[', ']]'],
-  el: '#app',
-  data: {
-    message: 'Hello Vue!',
-  },
-  clickEvent(){
-    console.log('clicked!')
-  }
-}).mount('#app');
+//   // Methods
+//   toggleDarkMode() {
+//     const body = document.getElementsByTagName('html');
+//     body.setAttribute('class', 'dark');
+//   },
+//   // event listener for system theme change
+// }).mount('#app');

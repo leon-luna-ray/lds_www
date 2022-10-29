@@ -22,23 +22,23 @@
         {# Override this in templates to add extra stylesheets #}
         {% endblock %}
 
-        {# Vue #}
+        {# Petite Vue #}
         <script type="module" src="{% static 'js/index.js' %}" defer></script>
     </head>
 
-    <body id="app" class="{% block body_class %}{% endblock %}">
+    <body id="app" :class="{dark: state.darkMode}" class="{% block body_class %}{% endblock %}">
         {% wagtailuserbar %}
         <header>
             {% include './nav.html' %}
         </header>
-        <main @click="clickEvent">
+        <main>
             {% block content %}{% endblock %}
         </main>
         {% comment %} TODO add footer tag + component {% endcomment %}
 
         {# Global javascript #}
         <script type="text/javascript" src="{% static 'js/jquery/jquery.min.js' %}"></script>
-        <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/main.js' %}"></script> 
 
 
         {# Dark mode #}
@@ -52,7 +52,7 @@
                 document.getElementById('white-logo').classList.add('hidden');
                 document.getElementById('black-logo').classList.remove('hidden');
                 }
-        </script>
+        </script> 
 
         {% block extra_js %}
         {# Override this in templates to add extra javascript #}
