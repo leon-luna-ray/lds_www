@@ -1,4 +1,4 @@
-{% load static wagtailcore_tags wagtailuserbar %}
+{% load static menu_tags wagtailcore_tags wagtailuserbar %}
 
 <!DOCTYPE html>
 <html lang="es">
@@ -28,7 +28,7 @@
     <body class="{% block body_class %}{% endblock %}">
         {% wagtailuserbar %}
         <header>
-            {% include './nav.html' %}
+            {% main_menu max_levels=1 template='base/nav.html'%}
         </header>
         <main>
             {% block content %}{% endblock %}
@@ -44,8 +44,10 @@
             if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
                 document.documentElement.classList.add('dark')
                 document.getElementById('white-logo').classList.remove('hidden');
+                document.getElementById('black-logo').classList.add('hidden');
                 } else {
                 document.documentElement.classList.remove('dark')
+                document.getElementById('white-logo').classList.add('hidden');
                 document.getElementById('black-logo').classList.remove('hidden');
                 }
         </script>

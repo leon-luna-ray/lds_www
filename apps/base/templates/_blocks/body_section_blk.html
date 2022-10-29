@@ -1,0 +1,7 @@
+{% load wagtailcore_tags %}
+
+<div>
+    {% for section in self %}
+        {% include_block section %}
+    {% endfor %}
+</div>
