@@ -9,7 +9,7 @@
         {% image carousel_image.value width-400 %}
         {% endfor %}
     </div>
-    {% for block in self.content %}
+    {% for block in page.content %}
         {% include_block block %}
     {% endfor %}
 </div>

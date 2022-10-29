@@ -1,6 +1,7 @@
 {% load wagtailcore_tags %}
 
 <div>
-    Body Section Block
-    
+    {% for section in self %}
+        {% include_block section %}
+    {% endfor %}
 </div>
