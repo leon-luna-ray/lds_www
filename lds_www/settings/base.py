@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     # Project Apps
     "apps.base",
     "apps.home",
+    "apps.services",
     "apps.search",
 ]
 
