@@ -17,7 +17,8 @@ class FreeTextBlock(StructBlock):
             'link', 'button-link', 'link-list',
             'document-link', 'image', 'embed'])
 
-    template = 'blocks/free_text_blk.html'
+    class Meta:
+        template = '_blocks/free_text_blk.html'
 
 
 class BodySectionBlock(StreamBlock):
@@ -26,6 +27,9 @@ class BodySectionBlock(StreamBlock):
     """
     section = StreamBlock([
         ('free_text', FreeTextBlock())
-    ])
-
-    template = 'blocks/body_section_blk.html'
+    ],
+        blank=True,
+        null=True,
+    )
+    class Meta:
+        template = '_blocks/body_section_blk.html'

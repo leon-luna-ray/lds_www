@@ -3,12 +3,14 @@
 
 {% block content %}
 <div class="container">
-
+    {{ page.intro_text|richtext }}
     <div class="banner-carousel flex">
         {% for carousel_image in page.banner_carousel %}
         {% image carousel_image.value width-400 %}
         {% endfor %}
     </div>
-    {{ page.intro_text|richtext }}
+    {% for block in self.content %}
+        {% include_block block %}
+    {% endfor %}
 </div>
 {% endblock %}

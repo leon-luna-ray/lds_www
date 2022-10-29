@@ -9,7 +9,8 @@ from apps.base.models.blocks import BodySectionBlock
 
 
 class HomePage(BasePage):
-    # pass
+    intro_text = RichTextField(null=True)
+
     banner_carousel = StreamField(
         [
             ('carousel_item', ImageChooserBlock(
@@ -34,8 +35,6 @@ class HomePage(BasePage):
     # Link Block to other pages (block (image + text + page or url))
     # Annoucments/promotions (block)
     # Featured works (orderable)
-
-    intro_text = RichTextField(null=True)
 
     # config
     max_count = 1
