@@ -1,4 +1,4 @@
-{% load static wagtailcore_tags wagtailuserbar %}
+{% load static menu_tags wagtailcore_tags wagtailuserbar %}
 
 <!DOCTYPE html>
 <html lang="es">
@@ -28,7 +28,7 @@
     <body class="{% block body_class %}{% endblock %}">
         {% wagtailuserbar %}
         <header>
-            {% include './nav.html' %}
+            {% main_menu max_levels=1 template='base/nav.html'%}
         </header>
         <main>
             {% block content %}{% endblock %}

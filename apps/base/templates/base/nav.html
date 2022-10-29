@@ -1,4 +1,4 @@
-{% load static %}
+{% load static menu_tags %}
 
 <div id="site-header" class="flex justify-between px-[2.25rem] py-4 mb-5">
   <div class="header-logo">
@@ -18,10 +18,14 @@
     </a>
   </div>
   <nav class="flex w-[45%] justify-evenly">
-    <h4>Inicio</h4>
+    {% for item in menu_items  %}
+    <a href="{{ item.href }}"></a>
+    <h4>{{ item.text }}</h4>
+    {% endfor %}
+    {% comment %} <h4>Inicio</h4>
     <h4>Laboratorio</h4>
     <h4>Servicios</h4>
-    <h4>Trabajos</h4>
+    <h4>Trabajos</h4> {% endcomment %}
     {% include './blocks/dark_mode_btn.html' %}
   </nav>
 </div>
