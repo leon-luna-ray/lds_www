@@ -22,15 +22,16 @@
         {# Override this in templates to add extra stylesheets #}
         {% endblock %}
 
-
+        {# Vue #}
+        <script type="module" src="{% static 'js/index.js' %}" defer></script>
     </head>
 
-    <body class="{% block body_class %}{% endblock %}">
+    <body id="app" class="{% block body_class %}{% endblock %}">
         {% wagtailuserbar %}
         <header>
             {% include './nav.html' %}
         </header>
-        <main>
+        <main @click="clickEvent">
             {% block content %}{% endblock %}
         </main>
         {% comment %} TODO add footer tag + component {% endcomment %}
@@ -38,6 +39,7 @@
         {# Global javascript #}
         <script type="text/javascript" src="{% static 'js/jquery/jquery.min.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+
 
         {# Dark mode #}
         <script>
