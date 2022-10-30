@@ -1,0 +1,5 @@
+@layer base{
+    .free-text-block h3 {
+        @apply text-3xl;
+    }
+}
