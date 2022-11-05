@@ -2,8 +2,8 @@
 {% load wagtailcore_tags wagtailimages_tags  %}
 
 {% block content %}
-<div id="home">
-    {% include 'components/carousel.html' with content=page.banner_carousel %}
+<div id="home" class="relative">
+    {% include 'components/carousel.html' with class='banner-carousel' content=page.banner_carousel %}
     {% comment %} <div class="text-center">
         {{ page.intro_text|richtext }}
     </div> {% endcomment %}
