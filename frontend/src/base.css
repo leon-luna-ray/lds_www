@@ -2,8 +2,4 @@
     body {
         @apply text-slate-900 dark:bg-[#1a1a1a] dark:text-slate-50;
     }
-
-    header {
-        @apply fixed top-0 z-[4] w-full;
-    }
 }

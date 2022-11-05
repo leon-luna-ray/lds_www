@@ -2,7 +2,7 @@
 
 <div
   id="site-header"
-  class="flex justify-between px-[2.25rem] py-4 mb-5 bg-white dark:bg-[#1a1a1a] z-[10] transition-all"
+  class="{% if request.path == '/' %}fixed top-0 z-[4]{% endif %} w-full flex justify-between px-[2.25rem] py-4 mb-5 bg-white dark:bg-[#1a1a1a] z-[10] transition-all duration-300"
 >
   <div class="header-logo">
     <a href="/">

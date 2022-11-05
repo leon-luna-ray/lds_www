@@ -428,13 +428,6 @@ body {
   color: rgb(248 250 252 / var(--tw-text-opacity));
 }
 
-header {
-  position: fixed;
-  top: 0px;
-  z-index: 4;
-  width: 100%;
-}
-
 .free-text-block h3 {
   font-size: 1.875rem;
   line-height: 2.25rem;
@@ -554,8 +547,20 @@ header {
   position: static;
 }
 
+.fixed {
+  position: fixed;
+}
+
 .relative {
   position: relative;
+}
+
+.top-0 {
+  top: 0px;
+}
+
+.z-\[4\] {
+  z-index: 4;
 }
 
 .z-\[10\] {
@@ -580,6 +585,10 @@ header {
 
 .hidden {
   display: none;
+}
+
+.w-full {
+  width: 100%;
 }
 
 .w-\[250px\] {
@@ -651,20 +660,14 @@ header {
   text-underline-offset: 8px;
 }
 
-.transition-opacity {
-  transition-property: opacity;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
 .transition-all {
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
 
-.ease-in-out {
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+.duration-300 {
+  transition-duration: 300ms;
 }
 
 .hover\:cursor-pointer:hover {
