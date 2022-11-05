@@ -433,6 +433,19 @@ body {
   line-height: 2.25rem;
 }
 
+.owl-carousel .image img {
+  /* @apply h-[300px] md:h-[600px] w-full; */
+  height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .owl-carousel .image img {
+    height: 600px;
+  }
+}
+
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -557,10 +570,6 @@ body {
 
 .w-\[45\%\] {
   width: 45%;
-}
-
-.w-full {
-  width: 100%;
 }
 
 .justify-between {

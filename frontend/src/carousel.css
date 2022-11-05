@@ -1,0 +1,6 @@
+@layer base {
+    .owl-carousel .image img {
+        /* @apply h-[300px] md:h-[600px] w-full; */
+        @apply h-[300px] md:h-[600px] object-cover;
+    }
+}

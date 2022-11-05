@@ -4,7 +4,6 @@ $(document).ready(function () {
   // Todo find a way to refine this interaction where it will not change if it's already on the correct theme
   const darkPreference = window.matchMedia('(prefers-color-scheme: dark)');
 
-
   // Dark Mode
   function toggleDarkMode() {
     if (darkMode) {
@@ -29,5 +28,18 @@ $(document).ready(function () {
   $('#dark-mode-btn').on('click', function (e) {
     e.preventDefault();
     toggleDarkMode();
+  });
+
+  // Owl Carousel
+  $(".owl-carousel").owlCarousel({
+    autoplay: true,
+    loop:true,
+    margin:10,
+    // nav:true,
+    responsive:{
+        0:{
+            items:1
+        },
+    }
   });
 });

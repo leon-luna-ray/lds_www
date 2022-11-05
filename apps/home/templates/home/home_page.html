@@ -2,17 +2,12 @@
 {% load wagtailcore_tags wagtailimages_tags  %}
 
 {% block content %}
-<div class="">
-
-    <div class="banner-carousel flex w-full pb-2">
-        {% for carousel_image in page.banner_carousel %}
-        {% image carousel_image.value width-400 %}
-        {% endfor %}
-    </div>
-    <div class="text-center">
+<div id="home">
+    {% include 'components/carousel.html' with content=page.banner_carousel %}
+    {% comment %} <div class="text-center">
         {{ page.intro_text|richtext }}
-    </div>
-
+    </div> {% endcomment %}
+    {# content blocks #}
     {% for block in page.content %}
         {% include_block block %}
     {% endfor %}

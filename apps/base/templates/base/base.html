@@ -18,11 +18,12 @@
 
         {# Global stylesheets #}
         <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+        <link rel="stylesheet" href="{% static 'css/owl_carousel/owl.carousel.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/owl_carousel/owl.theme.default.min.css' %}">
+
         {% block extra_css %}
         {# Override this in templates to add extra stylesheets #}
         {% endblock %}
-
-
     </head>
 
     <body class="{% block body_class %}{% endblock %}">
@@ -37,6 +38,7 @@
 
         {# Global javascript #}
         <script type="text/javascript" src="{% static 'js/jquery/jquery.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/owl_carousel/owl.carousel.min.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
 
         {# Dark mode #}
