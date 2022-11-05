@@ -1,44 +1,26 @@
 $(document).ready(function () {
   const body = $('html');
-  const header = $('#site-header')
-  const logo = $('.header-logo')
-  const navLinks = $('.nav-link')
-  const bannerCarousel = $('#banner-carousel')[0]
-  console.log(bannerCarousel)
-  
-  if(($(window).scrollTop() === 0) && bannerCarousel){
-    logo.addClass('opacity-0')
-    header.removeClass('bg-white dark:bg-[#1a1a1a]')
-    navLinks.css({ "color": "#cacaca"})
-  }
-
-  // Nav
-  $(window).scroll(function() {
-    const scrollTop = $(window).scrollTop();
-    if(scrollTop === 0) {
-      header.removeClass('bg-white dark:bg-[#1a1a1a]')
-      logo.addClass('opacity-0')
-      navLinks.css({ "color": "#cacaca"})
-    } else {
-      header.addClass('bg-white dark:bg-[#1a1a1a]')
-      logo.removeClass('opacity-0')
-      navLinks.removeAttr("style");
-    }
-  })
+  const navIcons = $('.nav-icon');
 
   // Dark Mode
   const darkMode = $('html').hasClass('dark');
   const darkPreference = window.matchMedia('(prefers-color-scheme: dark)');
+
+  if (!darkMode) {
+    navIcons.removeClass('invert-icons');
+  }
 
   function toggleDarkMode() {
     if (darkMode) {
       localStorage.theme = 'light';
       $('#white-logo').toggleClass('hidden');
       $('#black-logo').toggleClass('hidden');
+      navIcons.toggleClass('invert-icons');
     } else {
       localStorage.theme = 'dark';
       $('#white-logo').toggleClass('hidden');
       $('#black-logo').toggleClass('hidden');
+      navIcons.toggleClass('invert-icons');
     }
     body.toggleClass('dark');
   }
@@ -54,22 +36,8 @@ $(document).ready(function () {
         toggleDarkMode();
       }
     });
-
   $('#dark-mode-btn').on('click', function (e) {
     e.preventDefault();
     toggleDarkMode();
-  });
-
-  // Owl Carousel
-  $('.owl-carousel').owlCarousel({
-    autoplay: true,
-    loop: true,
-    margin: 10,
-    // nav:true,
-    responsive: {
-      0: {
-        items: 1,
-      },
-    },
   });
 });

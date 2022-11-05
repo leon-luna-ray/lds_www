@@ -1,17 +1,17 @@
 {% extends "base/base.html" %}
-{% load wagtailcore_tags wagtailimages_tags  %}
+{% load static wagtailcore_tags wagtailimages_tags  %}
 
 {% block content %}
 <div id="home" class="relative">
     <div id="banner-carousel">
     {% include 'components/carousel.html' with content=page.banner_carousel %}
     </div>
-    {% comment %} <div class="text-center">
-        {{ page.intro_text|richtext }}
-    </div> {% endcomment %}
-    {# content blocks #}
     {% for block in page.content %}
         {% include_block block %}
     {% endfor %}
 </div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/bannerCarousel.js' %}"></script>
 {% endblock %}

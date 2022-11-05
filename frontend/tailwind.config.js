@@ -2,11 +2,17 @@ module.exports = {
   content: ['../**/*.html'],
   darkMode: 'class',
   theme: {
-    container:{
+    container: {
       // center: true,
       padding: '2.25rem',
     },
-    extend: {},
+    extend: {
+      colors: {
+        gray: {
+          900: '#1a1a1a',
+        },
+      },
+    },
   },
   plugins: [],
 };
