@@ -3,7 +3,7 @@
 <div class="owl-carousel pb-2">
     {% for carousel_image in page.banner_carousel %}
         <div class="image">
-            {% image carousel_image.value original alt=carousel_image.value.alt %}
+            {% image carousel_image.value width-1600 alt=carousel_image.value.alt %}
         </div>
     {% endfor %}
 </div>

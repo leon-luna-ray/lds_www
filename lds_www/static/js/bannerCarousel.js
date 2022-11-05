@@ -1,5 +1,5 @@
-// Full bleed carousel and home page nav interaction
 $(document).ready(function () {
+  // Full bleed carousel and home page nav interaction
   const header = $('#site-header');
   const logo = $('.header-logo img');
   const navLinks = $('.nav-link');
@@ -31,7 +31,6 @@ $(document).ready(function () {
   $('.owl-carousel').owlCarousel({
     autoplay: true,
     loop: true,
-    lazyLoad: true,
     margin: 10,
     // nav:true,
     responsive: {
