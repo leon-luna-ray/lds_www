@@ -1,7 +1,7 @@
 {% load static menu_tags %}
 
 <div id="site-header" class="flex justify-between px-[2.25rem] py-4 mb-5 bg-white dark:bg-[#1a1a1a] z-[10]">
-  <div class="header-logo opacity-0">
+  <div class="header-logo">
     <a href="/">
       <img
         id="white-logo"
@@ -20,7 +20,7 @@
   <nav class="flex w-[45%] justify-evenly">
     {% for item in menu_items  %}
     <a href="{{ item.href }}">
-      <h4 class="{% if request.path == item.href %}underline underline-offset-8{% endif %}" >{{ item.text }}</h4>
+      <h4 class="nav-link {% if request.path == item.href %}underline underline-offset-8{% endif %}" >{{ item.text }}</h4>
     </a>
     {% endfor %}
     {% include '../_blocks/dark_mode_btn.html' %}
