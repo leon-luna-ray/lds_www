@@ -4,12 +4,17 @@ $(document).ready(function () {
   const logo = $('.header-logo img');
   const navLinks = $('.nav-link');
   const bannerCarousel = $('#banner-carousel')[0];
+  const navIcons = $('.nav-icon');
 
   // Nav
   function transparentNav() {
     header.removeClass('bg-white dark:bg-gray-900');
     logo.css({ opacity: '0' });
     navLinks.css({ color: '#cacaca' });
+    navIcons.css({
+      "-webkit-filter": "invert(90%)",
+      "filter": "invert(90%)"
+    })
   }
   // on load
   if ($(window).scrollTop() === 0 && bannerCarousel) {
@@ -23,6 +28,7 @@ $(document).ready(function () {
     } else {
       header.addClass('bg-white dark:bg-gray-900');
       navLinks.removeAttr('style');
+      navIcons.removeAttr('style');
       logo.removeAttr('style');
     }
   });
