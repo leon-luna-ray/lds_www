@@ -655,8 +655,8 @@ header {
   text-underline-offset: 8px;
 }
 
-.opacity-0 {
-  opacity: 0;
+.opacity-100 {
+  opacity: 1;
 }
 
 .hover\:cursor-pointer:hover {

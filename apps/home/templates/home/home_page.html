@@ -1,5 +1,5 @@
 {% extends "base/base.html" %}
-{% load wagtailcore_tags wagtailimages_tags  %}
+{% load static wagtailcore_tags wagtailimages_tags  %}
 
 {% block content %}
 <div id="home" class="relative">
@@ -14,4 +14,8 @@
         {% include_block block %}
     {% endfor %}
 </div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/bannerCarousel.js' %}"></script>
 {% endblock %}

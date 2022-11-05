@@ -1,0 +1,43 @@
+// Full bleed carousel and home page nav interaction
+$(document).ready(function () {
+  const header = $('#site-header');
+  const logo = $('.header-logo img');
+  const navLinks = $('.nav-link');
+  const bannerCarousel = $('#banner-carousel')[0];
+
+  // Nav
+  function transparentNav() {
+    header.removeClass('bg-white dark:bg-[#1a1a1a]');
+    logo.css({ opacity: '0' });
+    navLinks.css({ color: '#cacaca' });
+  }
+  // on load
+  if ($(window).scrollTop() === 0 && bannerCarousel) {
+    transparentNav();
+  }
+  // on scroll
+  $(window).scroll(function () {
+    const scrollTop = $(window).scrollTop();
+    if (scrollTop === 0) {
+      transparentNav();
+    } else {
+      header.addClass('bg-white dark:bg-[#1a1a1a]');
+      navLinks.removeAttr('style');
+      logo.removeAttr('style');
+    }
+  });
+
+  // Owl Carousel
+  $('.owl-carousel').owlCarousel({
+    autoplay: true,
+    loop: true,
+    lazyLoad: true,
+    margin: 10,
+    // nav:true,
+    responsive: {
+      0: {
+        items: 1,
+      },
+    },
+  });
+});
