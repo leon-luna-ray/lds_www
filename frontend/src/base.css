@@ -8,7 +8,7 @@
     }
     #nav-icons img{
         @apply hover:cursor-pointer h-[20px];
-        stroke: red;
+        /* stroke: red; */
     }
     .invert-icons {
         -webkit-filter: invert(100%); /* safari 6.0 - 9.0 */
