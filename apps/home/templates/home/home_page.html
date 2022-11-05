@@ -3,7 +3,9 @@
 
 {% block content %}
 <div id="home" class="relative">
-    {% include 'components/carousel.html' with class='banner-carousel' content=page.banner_carousel %}
+    <div id="banner-carousel">
+    {% include 'components/carousel.html' with content=page.banner_carousel %}
+    </div>
     {% comment %} <div class="text-center">
         {{ page.intro_text|richtext }}
     </div> {% endcomment %}

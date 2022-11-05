@@ -2,9 +2,14 @@ $(document).ready(function () {
   const body = $('html');
   const header = $('#site-header')
   const logo = $('.header-logo')
+  const navLinks = $('.nav-link')
+  const bannerCarousel = $('#banner-carousel')[0]
+  console.log(bannerCarousel)
   
-  if($(window).scrollTop() === 0){
+  if(($(window).scrollTop() === 0) && bannerCarousel){
+    logo.addClass('opacity-0')
     header.removeClass('bg-white dark:bg-[#1a1a1a]')
+    navLinks.css({ "color": "#cacaca"})
   }
 
   // Nav
@@ -12,12 +17,12 @@ $(document).ready(function () {
     const scrollTop = $(window).scrollTop();
     if(scrollTop === 0) {
       header.removeClass('bg-white dark:bg-[#1a1a1a]')
-      logo.removeClass('opacity-100')
       logo.addClass('opacity-0')
+      navLinks.css({ "color": "#cacaca"})
     } else {
       header.addClass('bg-white dark:bg-[#1a1a1a]')
       logo.removeClass('opacity-0')
-      logo.addClass('opacity-100')
+      navLinks.removeAttr("style");
     }
   })
 
