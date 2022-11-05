@@ -2,7 +2,7 @@
 
 <div
   id="site-header"
-  class="{% if request.path == '/' %}fixed top-0 z-[4]{% endif %} w-full flex justify-between px-[2.25rem] py-4 mb-5 bg-white dark:bg-[#1a1a1a] z-[10] transition-all duration-300"
+  class="{% if request.path == '/' %}fixed top-0 z-[4]{% endif %} w-full flex justify-between px-[2.25rem] py-4 mb-5 bg-white dark:bg-gray-900 z-[10] transition-all duration-300"
 >
   <div class="header-logo">
     <a href="/">
@@ -20,15 +20,25 @@
       />
     </a>
   </div>
-  <nav class="flex w-[45%] justify-evenly">
+  <nav id="nav-links" class="flex w-[40%] justify-evenly">
     {% for item in menu_items %}
-    <a href="{{ item.href }}">
+    <a href="{{ item.href }}" class="">
       <h4
         class="nav-link {% if request.path == item.href %}underline underline-offset-8{% endif %}"
       >
         {{ item.text }}
       </h4>
     </a>
-    {% endfor %} {% include '../_blocks/dark_mode_btn.html' %}
+    {% endfor %} 
+    <div id="nav-icons" class="flex items-center gap-x-3">
+      <a href="">
+        <img class="nav-icon" src="{% static 'images/icons/icons8-facebook.svg' %}" alt="">
+      </a>
+      <a href="">
+        <img class="nav-icon" src="{% static 'images/icons/icons8-instagram.svg' %}" alt="">
+      </a>
+      <img id="dark-mode-btn" class="nav-icon" src="{% static 'images/icons/icons8-idea.svg' %}" alt="">
+    </div>
+    {% comment %} {% include '../_blocks/dark_mode_btn.html' %} {% endcomment %}
   </nav>
 </div>

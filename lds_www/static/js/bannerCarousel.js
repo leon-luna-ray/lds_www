@@ -7,7 +7,7 @@ $(document).ready(function () {
 
   // Nav
   function transparentNav() {
-    header.removeClass('bg-white dark:bg-[#1a1a1a]');
+    header.removeClass('bg-white dark:bg-gray-900');
     logo.css({ opacity: '0' });
     navLinks.css({ color: '#cacaca' });
   }
@@ -21,7 +21,7 @@ $(document).ready(function () {
     if (scrollTop === 0) {
       transparentNav();
     } else {
-      header.addClass('bg-white dark:bg-[#1a1a1a]');
+      header.addClass('bg-white dark:bg-gray-900');
       navLinks.removeAttr('style');
       logo.removeAttr('style');
     }

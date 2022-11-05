@@ -1,19 +1,28 @@
 $(document).ready(function () {
   const body = $('html');
+  const navIcons = $('.nav-icon');
 
   // Dark Mode
   const darkMode = $('html').hasClass('dark');
   const darkPreference = window.matchMedia('(prefers-color-scheme: dark)');
+
+  if (darkMode) {
+    navIcons.addClass('invert-icons');
+  } else {
+    navIcons.removeClass('invert-icons');
+  }
 
   function toggleDarkMode() {
     if (darkMode) {
       localStorage.theme = 'light';
       $('#white-logo').toggleClass('hidden');
       $('#black-logo').toggleClass('hidden');
+      navIcons.toggleClass('invert-icons');
     } else {
       localStorage.theme = 'dark';
       $('#white-logo').toggleClass('hidden');
       $('#black-logo').toggleClass('hidden');
+      navIcons.toggleClass('invert-icons');
     }
     body.toggleClass('dark');
   }
