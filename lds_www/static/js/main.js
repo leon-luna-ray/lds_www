@@ -6,9 +6,7 @@ $(document).ready(function () {
   const darkMode = $('html').hasClass('dark');
   const darkPreference = window.matchMedia('(prefers-color-scheme: dark)');
 
-  if (darkMode) {
-    navIcons.addClass('invert-icons');
-  } else {
+  if (!darkMode) {
     navIcons.removeClass('invert-icons');
   }
 

@@ -441,8 +441,9 @@ nav {
   cursor: pointer;
 }
 
-#nav-icons img{
-  /* stroke: red; */
+.invert-icons {
+  /* safari 6.0 - 9.0 */
+  filter: invert(100%);
 }
 
 .free-text-block h3 {
