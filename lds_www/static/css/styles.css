@@ -433,11 +433,29 @@ nav {
   align-items: center;
 }
 
+#nav-links {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  #nav-links {
+    display: flex;
+  }
+}
+
 #nav-icons img {
   height: 20px;
 }
 
 #nav-icons img:hover {
+  cursor: pointer;
+}
+
+#mobile-menu img {
+  height: 20px;
+}
+
+#mobile-menu img:hover {
   cursor: pointer;
 }
 
@@ -733,6 +751,10 @@ nav {
     .md\:container {
       max-width: 1536px;
     }
+  }
+
+  .md\:hidden {
+    display: none;
   }
 
   .md\:px-4 {
