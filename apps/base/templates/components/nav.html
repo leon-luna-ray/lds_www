@@ -1,10 +1,6 @@
 {% load static menu_tags %}
 
-<div
-  id="site-header"
-  class="{% if request.path == '/' %}fixed top-0 z-[4]{% endif %} w-full flex justify-between pl-4 pr-8 md:px-4 lg:px-12 py-4 mb-5 bg-white dark:bg-gray-900 z-[10] transition-all duration-300"
->
-
+<div id="site-header" class="bg-white dark:bg-gray-900 {% if request.path == '/' %}fixed top-0{% endif %}">
   <div class="header-logo">
     <a href="/">
       <img
@@ -20,9 +16,9 @@
       />
     </a>
   </div>
-  <nav id="nav-links" class="flex w-[40%] justify-evenly">
+  <nav id="nav-links">
     {% for item in menu_items %}
-    <a href="{{ item.href }}" class="">
+    <a href="{{ item.href }}">
       <h4
         class="nav-link {% if request.path == item.href %}underline underline-offset-8{% endif %}"
       >
@@ -30,7 +26,7 @@
       </h4>
     </a>
     {% endfor %} 
-    <div id="nav-icons" class="flex items-center gap-x-3">
+    <div id="nav-icons">
       <a href="https://www.facebook.com/lunadentalstudio/" target="_blank">
         <img class="nav-icon invert-icons" src="{% static 'images/icons/icons8-facebook.svg' %}" alt="">
       </a>
@@ -39,10 +35,9 @@
       </a>
       <img id="dark-mode-btn" class="nav-icon invert-icons" src="{% static 'images/icons/icons8-idea.svg' %}" alt="">
     </div>
-    {% comment %} {% include '../_blocks/dark_mode_btn.html' %} {% endcomment %}
   </nav>
+  {# Mobile #}
   <div id="mobile-menu" class="flex items-center md:hidden">
     <img id="hamburger-menu" class="nav-icon invert-icons" src="{% static 'images/icons/icons8-menu.svg' %}" alt="">
   </div>
-
 </div>
