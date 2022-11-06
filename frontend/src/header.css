@@ -14,9 +14,6 @@
     #nav-icons {
         @apply flex items-center gap-x-3;
     }
-    #mobile-menu img {
-        @apply hover:cursor-pointer h-[20px];
-    }
     .invert-icons {
         -webkit-filter: invert(100%);
         filter: invert(100%);
@@ -24,5 +21,12 @@
     /* home page header banner */
     #banner-carousel .image img {
         @apply h-[350px] md:h-[700px] object-cover;
+    }
+
+    #hamburger-menu img {
+        @apply hover:cursor-pointer h-[20px];
+    }
+    #mobile-menu {
+        @apply bg-gray-900;
     }
 }

@@ -1,4 +1,4 @@
-{% load static menu_tags %}
+{% load static menu_tags wagtailcore_tags %}
 
 <div id="site-header" class="bg-white dark:bg-gray-900 {% if request.path == '/' %}fixed top-0{% endif %}">
   <div class="header-logo">
@@ -37,7 +37,10 @@
     </div>
   </nav>
   {# Mobile #}
-  <div id="mobile-menu" class="flex items-center md:hidden">
-    <img id="hamburger-menu" class="nav-icon invert-icons" src="{% static 'images/icons/icons8-menu.svg' %}" alt="">
+  <div id="hamburger-menu" class="flex items-center md:hidden relative">
+    <img class="nav-icon invert-icons" src="{% static 'images/icons/icons8-menu.svg' %}" alt="">
+
+      {% include 'components/mobile_menu.html' %}
+    
   </div>
 </div>
