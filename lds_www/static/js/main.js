@@ -40,4 +40,14 @@ $(document).ready(function () {
     e.preventDefault();
     toggleDarkMode();
   });
+
+  // TODO Mobile Menu
+  $('#hamburger-menu').on('click', function(e){
+    e.preventDefault();
+
+    $('#mobile-menu').removeClass('opacity-0 h-0');
+    $('#mobile-menu').addClass('opacity-100 h-full')
+  })
+
+
 });

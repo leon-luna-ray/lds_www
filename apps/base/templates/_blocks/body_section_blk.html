@@ -1,7 +1,7 @@
 {% load wagtailcore_tags %}
 
-<div class="body-sections-block md:container pt-10">
-    {% for section in self %}
-        {% include_block section %}
-    {% endfor %}
+<div class="sections-block container mx-auto">
+  {% for section in self %}
+  <div class="body-section">{% include_block section %}</div>
+  {% endfor %}
 </div>

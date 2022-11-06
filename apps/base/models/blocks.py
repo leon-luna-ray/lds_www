@@ -1,4 +1,8 @@
+# from django.db import models
+from wagtail.images.blocks import ImageChooserBlock
 from wagtail.core.blocks import (
+    CharBlock,
+    PageChooserBlock,
     RichTextBlock,
     StreamBlock,
     StructBlock,
@@ -21,15 +25,44 @@ class FreeTextBlock(StructBlock):
         template = '_blocks/free_text_blk.html'
 
 
+class LinkBlock(StructBlock):
+    """
+    Link with text title
+    """
+    link = PageChooserBlock(required=True)
+    title = CharBlock(required=False)
+
+
+class LinkWithTextBlock(LinkBlock):
+    """
+    Link with text title amd description
+    """
+    text = RichTextBlock(required=False, features=['bold', 'italic', ])
+
+
+class LinkWithImageBlock(LinkWithTextBlock):
+    """
+    Link with text title, description and image
+    """
+    image = ImageChooserBlock(required=False)
+
+
+class LinkCardBlock(StreamBlock):
+    """
+    Stream block providing all page builder components for main body
+    """
+    link_card = LinkWithImageBlock(min_num=2)
+
+    class Meta:
+        template = '_blocks/link_card_blk.html'
+
+
 class BodySectionBlock(StreamBlock):
     """
     Stream block providing all page builder components for main body
     """
-    section = StreamBlock([
-        ('free_text', FreeTextBlock())
-    ],
-        blank=True,
-        null=True,
-    )
+    free_text = FreeTextBlock()
+    link_card_block = LinkCardBlock()
+
     class Meta:
         template = '_blocks/body_section_blk.html'

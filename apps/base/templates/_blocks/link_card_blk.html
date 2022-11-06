@@ -1,0 +1,19 @@
+{% load static wagtailcore_tags wagtailimages_tags %}
+
+<div class="container link-card-block">
+  {% for link_card in self %}
+  <div class="link-card card v1">
+    <a href="{% pageurl link_card.value.link %}">
+      {% image link_card.value.image height-300 alt=link_card.value.image.alt %}
+      <div class="content flex justify-between relative">
+        <div class="text">
+          <h3>{{ link_card.value.title }}</h3>
+          <p>{{ link_card.value.text }}</p>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="m24 40-2.1-2.15L34.25 25.5H8v-3h26.25L21.9 10.15 24 8l16 16Z"/></svg>
+      </div>
+
+      </a>
+  </div>
+  {% endfor %}
+</div>
