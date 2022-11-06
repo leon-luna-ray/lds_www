@@ -4,7 +4,7 @@
 {% block content %}
 <div id="home" class="relative">
     <div id="banner-carousel">
-    {% include 'components/carousel.html' with content=page.banner_carousel %}
+        {% include 'components/carousel.html' with content=page.banner_carousel %}
     </div>
     {% for block in page.content %}
         {% include_block block %}
@@ -13,5 +13,5 @@
 {% endblock %}
 
 {% block extra_js %}
-<script src="{% static 'js/bannerCarousel.js' %}"></script>
+    <script src="{% static 'js/bannerCarousel.js' %}"></script>
 {% endblock %}
