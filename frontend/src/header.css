@@ -1,6 +1,6 @@
 @layer base {
     #site-header {
-        @apply w-full flex justify-between pl-4 pr-8 md:px-4 lg:px-12 py-4 z-[10] transition-all duration-300;
+        @apply w-full flex justify-between pl-4 md:px-6 lg:px-12 py-4 z-[10] transition-all duration-300;
     }
     #site-header .header-logo img {
         @apply w-[175px] md:w-[250px];
