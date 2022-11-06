@@ -3,22 +3,4 @@
         @apply text-slate-900 dark:bg-gray-900 dark:text-slate-50;
     }
 
-    nav {
-        @apply flex items-center;
-    }
-    #nav-links {
-        @apply hidden md:flex;
-    }
-    #nav-icons img {
-        @apply hover:cursor-pointer h-[20px];
-    }
-
-    #mobile-menu img {
-        @apply hover:cursor-pointer h-[20px];
-    }
-
-    .invert-icons {
-        -webkit-filter: invert(100%); /* safari 6.0 - 9.0 */
-        filter: invert(100%);
-    }
 }

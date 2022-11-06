@@ -1,0 +1,27 @@
+@layer base {
+    #site-header .header-logo {
+        /* border: 2px solid blue; */
+    }
+    #site-header .header-logo img {
+        @apply w-[175px] md:w-[250px];
+    }
+    nav {
+        @apply flex items-center;
+    }
+    #nav-links {
+        @apply hidden md:flex;
+    }
+    #nav-icons img {
+        @apply hover:cursor-pointer h-[20px];
+    }
+    #mobile-menu img {
+        @apply hover:cursor-pointer h-[20px];
+    }
+    .invert-icons {
+        -webkit-filter: invert(100%); /* safari 6.0 - 9.0 */
+        filter: invert(100%);
+    }
+    .owl-carousel .image img {
+        @apply h-[350px] md:h-[700px] object-cover;
+    }
+}

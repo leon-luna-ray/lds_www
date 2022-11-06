@@ -4,7 +4,7 @@
 {% block content %}
 <div id="home" class="relative">
     <div id="banner-carousel">
-    {% include 'components/carousel.html' with content=page.banner_carousel %}
+    {% include 'components/banner_carousel.html' with content=page.banner_carousel %}
     </div>
     {% for block in page.content %}
         {% include_block block %}
