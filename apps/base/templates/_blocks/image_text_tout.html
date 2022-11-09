@@ -1,8 +1,10 @@
 {% load wagtailcore_tags wagtailimages_tags %}
 
 <div class="image-text-tout">
-  <h2>{{ self.title }}</h2>
-  <p>{{ self.text }}</p>
-  {% image self.image width-900 %} 
-  {% if self.reverse %} Reversed!} {% endif %}
+  <div class="text {% if self.reversed %}order-last{% endif %}">
+    <h2>{{ self.title }}</h2>
+    <p>{{ self.text }}</p>
+  </div>
+  <div class="image">{% image self.image width-500 %}</div>
 </div>
+
