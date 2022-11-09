@@ -12,7 +12,7 @@
     @apply text-3xl;
   }
   .image-text-tout {
-    @apply grid md:grid-cols-2 gap-x-[4rem] gap-y-[4rem] justify-center p-[4rem] md:rounded-md items-center md:border-2 md:my-[3rem] dark:border-gray-300;
+    @apply grid md:grid-cols-2 gap-x-[4rem] gap-y-[4rem] justify-center p-[4rem] md:rounded-md items-center md:border-2 md:my-[3rem] dark:border-gray-300 md:shadow-inner;
   }
   .image-text-tout .image {
     @apply flex justify-center;
