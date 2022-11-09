@@ -12,7 +12,7 @@
     @apply text-3xl;
   }
   .image-text-tout {
-    @apply grid md:grid-cols-2 gap-x-[4rem] gap-y-[4rem] justify-center p-[4rem] md:rounded-md items-center md:border-2 md:my-[3rem] dark:border-gray-300 shadow-inner;
+    @apply grid md:grid-cols-2 gap-x-[4rem] gap-y-[4rem] justify-center p-[4rem] md:rounded-md items-center md:border-2 md:my-[3rem] dark:border-gray-300;
   }
   .image-text-tout .image {
     @apply flex justify-center;
@@ -21,7 +21,7 @@
     @apply object-cover rounded-full max-h-[400px] max-w-[400px] border-2;
   }
   .image-text-tout .text h2 {
-    @apply text-3xl pb-5 font-bold dark:text-blue-200;
+    @apply text-3xl pb-5 font-bold dark:text-slate-300;
   }
   .image-text-tout .text p {
     @apply text-xl leading-10;
