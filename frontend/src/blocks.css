@@ -1,14 +1,29 @@
-@layer base{
-    .sections-block {
-       @apply flex flex-col;
-    }
-    .body-section {
-        @apply mt-6 w-full;
-    }
-    .body-section:first-child {
-        @apply mt-0;
-    }
-    .free-text-block h3 {
-        @apply text-3xl;
-    }
+@layer base {
+  .sections-block {
+    @apply flex flex-col;
+  }
+  .body-section {
+    @apply mt-6 w-full;
+  }
+  .body-section:first-child {
+    @apply mt-0;
+  }
+  .free-text-block h3 {
+    @apply text-3xl;
+  }
+  .image-text-tout {
+    @apply grid md:grid-cols-2 gap-x-[4rem] gap-y-[4rem] justify-center p-[4rem] md:rounded-md items-center md:border-2 md:my-[3rem] dark:border-gray-300 shadow-inner;
+  }
+  .image-text-tout .image {
+    @apply flex justify-center;
+  }
+  .image-text-tout .image img {
+    @apply object-cover rounded-full max-h-[400px] max-w-[400px] border-2;
+  }
+  .image-text-tout .text h2 {
+    @apply text-3xl pb-5 font-bold dark:text-blue-200;
+  }
+  .image-text-tout .text p {
+    @apply text-xl leading-10;
+  }
 }

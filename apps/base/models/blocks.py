@@ -6,6 +6,8 @@ from wagtail.core.blocks import (
     RichTextBlock,
     StreamBlock,
     StructBlock,
+    BooleanBlock,
+    TextBlock,
 )
 
 
@@ -57,12 +59,23 @@ class LinkCardBlock(StreamBlock):
         template = '_blocks/link_card_blk.html'
 
 
+class ImageWithTextToutBlock(StructBlock):
+    title = CharBlock()
+    text = TextBlock()
+    image = ImageChooserBlock(required=False)
+    reverse = BooleanBlock(required=False)
+
+    class Meta:
+        template = '_blocks/image_text_tout.html'
+
+
 class BodySectionBlock(StreamBlock):
     """
     Stream block providing all page builder components for main body
     """
     free_text = FreeTextBlock()
     link_card_block = LinkCardBlock()
+    image_text_tout = ImageWithTextToutBlock()
 
     class Meta:
         template = '_blocks/body_section_blk.html'
