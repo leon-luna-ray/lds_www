@@ -9,7 +9,6 @@ from apps.base.models.blocks import BodySectionBlock
 
 
 class HomePage(BasePage):
-    intro_text = RichTextField(null=True)
 
     banner_carousel = StreamField(
         [
@@ -40,7 +39,6 @@ class HomePage(BasePage):
     max_count = 1
     subpage_types = ['home.AboutPage', 'services.ServicesLandingPage']
     content_panels = Page.content_panels + [
-        FieldPanel('intro_text'),
         FieldPanel('banner_carousel'),
         FieldPanel('content'),
     ]
@@ -49,8 +47,17 @@ class HomePage(BasePage):
 
 
 class AboutPage(BasePageWithOptions):
+    content = StreamField([
+        ('sections', BodySectionBlock())
+    ],
+        blank=False,
+        null=True,
+        max_num=1,
+    )
 
-    content_panels = BasePageWithOptions.intro_with_image_panel + []
+    content_panels = Page.content_panels + [
+        FieldPanel('content'),
+    ]
 
     # config
     max_count = 1

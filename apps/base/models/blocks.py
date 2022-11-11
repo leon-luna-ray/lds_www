@@ -42,6 +42,15 @@ class LinkWithTextBlock(LinkBlock):
     text = RichTextBlock(required=False, features=['bold', 'italic', ])
 
 
+class ImageWithTextBlock(StructBlock):
+    """
+    Image and text
+    """
+    title = CharBlock()
+    text = TextBlock()
+    image = ImageChooserBlock()
+
+
 class LinkWithImageBlock(LinkWithTextBlock):
     """
     Link with text title, description and image
@@ -68,14 +77,25 @@ class ImageWithTextToutBlock(StructBlock):
     class Meta:
         template = '_blocks/image_text_tout.html'
 
+class ThreeColumnToutBlock(StreamBlock):
+    """
+    Full width three column tout
+    """
+    intro = TextBlock()
+    column = ImageWithTextBlock(min_num=3, max_num=3)
+
+    class Meta:
+        template = "_blocks/three_column_tout.html"
+
 
 class BodySectionBlock(StreamBlock):
     """
     Stream block providing all page builder components for main body
     """
     free_text = FreeTextBlock()
-    link_card_block = LinkCardBlock()
     image_text_tout = ImageWithTextToutBlock()
+    link_card_block = LinkCardBlock()
+    three_column_tout = ThreeColumnToutBlock()
 
     class Meta:
         template = '_blocks/body_section_blk.html'
