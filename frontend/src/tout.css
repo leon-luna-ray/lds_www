@@ -1,0 +1,32 @@
+@layer base {
+    .image-text-tout {
+        @apply w-full py-[3rem] bg-slate-100 dark:bg-gray-700 flex justify-center items-center ;
+      }
+      .image-text-tout .container {
+        @apply grid md:grid-cols-2 gap-x-[3.5rem] gap-y-[4rem] justify-center items-center;
+      }
+      .image-text-tout .image {
+        @apply flex justify-center;
+      }
+      .image-text-tout .image img {
+        @apply object-cover rounded-full max-h-[400px] max-w-[400px] border-2;
+      }
+      .image-text-tout .text h2 {
+        @apply text-3xl pb-5 font-bold;
+      }
+      .image-text-tout .text p {
+        @apply text-xl leading-10;
+      }
+      .three-column-tout {
+        @apply w-full grid grid-cols-1 md:grid-cols-3 gap-x-[2rem] px-[2rem] gap-y-[3rem] py-[2rem] md:py-[5rem] bg-gradient-to-r from-cyan-500 to-blue-400 text-white dark:from-gray-800 dark:to-slate-800;
+      }
+      .three-column-tout .tout-column {
+        @apply flex justify-center items-center flex-col px-5 gap-y-7 text-center;
+      }
+      .three-column-tout h2 {
+        @apply text-3xl;
+      }
+      .three-column-tout img {
+        @apply invert;
+      }
+}

@@ -56,7 +56,7 @@ class AboutPage(BasePageWithOptions):
         max_num=1,
     )
 
-    content_panels = Page.content_panels + [
+    content_panels = BasePageWithOptions.intro_with_image_panel + [
         FieldPanel('content'),
     ]
 

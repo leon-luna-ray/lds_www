@@ -1,1 +1,13 @@
 {% load wagtailcore_tags wagtailimages_tags %}
+
+<div class="three-column-tout">
+    {% for column in self.columns %}
+    <div class="tout-column">
+        <div class="image">
+            {% image column.value.image width-300 %}
+        </div>
+        <h2>{{ column.value.title }}</h2>
+        <p>{{ column.value.text }}</p>
+    </div>
+    {% endfor %}
+</div>

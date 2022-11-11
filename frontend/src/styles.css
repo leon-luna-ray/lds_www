@@ -3,6 +3,7 @@
 @import "./header.css";
 @import "./blocks.css";
 @import "./cards.css";
+@import "./tout.css";
 
 @tailwind components;
 @tailwind utilities;
