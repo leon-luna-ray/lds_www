@@ -1,21 +1,17 @@
 {% load static wagtailcore_tags wagtailimages_tags %}
 
-<div class="md:container link-card-block">
-    <a href="">
-      {% comment %} {% image card.value.image height-300 alt=card.value.image.alt %} {% endcomment %}
-      <div class="content flex justify-between relative">
-        <div class="text">
-          <h3>{{ self.title }}</h3>
-          <h1>{{ link_url }}</h1>
-          <p>{{ self.text }}</p>
-        </div>
-        <svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="m24 40-2.1-2.15L34.25 25.5H8v-3h26.25L21.9 10.15 24 8l16 16Z"/></svg>
+<div class="link-card card v1">
+  {% for link in self.link  %}
+  <a href="{{ link_url }}" {% if link.block_type == 'external_link' %}target="_blank"{% endif %}">
+  {% endfor %}
+    {% image self.image height-300 alt=self.image.alt %}
+    <div class="content flex justify-between relative">
+      <div class="text">
+        <h3>{{ self.title }}</h3>
+        <p>{{ self.text }}</p>
       </div>
-
-      </a>
-  </div>
+      <svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="m24 40-2.1-2.15L34.25 25.5H8v-3h26.25L21.9 10.15 24 8l16 16Z"/></svg>
+    </div>
+    </a>
 </div>
-
-
-
 

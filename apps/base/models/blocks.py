@@ -11,7 +11,6 @@ from wagtail.core.blocks import (
     URLBlock,
 )
 
-
 class FreeTextBlock(StructBlock):
     """
     Simple free-form text block
@@ -37,48 +36,10 @@ class ImageWithTextBlock(StructBlock):
     image = ImageChooserBlock(required=False)
 
 
-class LinkBlock(StructBlock):
-    """
-    Link with text title
-    """
-    link = StreamBlock(
-        [
-            ('page_link', PageChooserBlock(
-                required=False,
-                icon='home',
-            )),
-            ('external_link', URLBlock(
-                required=False,
-                icon='link',
-            )),
-        ],
-        max_num=1,
-        required=False,
-    )
-    title = CharBlock(required=False)
-
-
-class LinkWithTextBlock(LinkBlock):
-    """
-    Link with text title amd description
-    """
-    text = RichTextBlock(required=False, features=['bold', 'italic', ])
-
-
-class LinkWithImageBlock(LinkWithTextBlock):
-    """
-    Link with text title, description and image
-    """
-    image = ImageChooserBlock(required=False)
-
-
 class LinkCardBlock(StructBlock):
     """
     Stream block providing all page builder components for main body
     """
-    title = CharBlock()
-    text = TextBlock(required=False)
-    image = ImageChooserBlock()
     link = StreamBlock(
         [
             ('page_link', PageChooserBlock(
@@ -93,7 +54,10 @@ class LinkCardBlock(StructBlock):
         max_num=1,
         required=True,
     )
-    
+    title = CharBlock()
+    text = TextBlock(required=False)
+    image = ImageChooserBlock()
+
     def get_context(self, value, parent_context=None):
         context = super().get_context(value, parent_context=parent_context)
         for block in value['link']:
