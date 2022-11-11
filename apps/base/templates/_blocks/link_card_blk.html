@@ -1,6 +1,6 @@
 {% load static wagtailcore_tags wagtailimages_tags %}
 
-<div class="container link-card-block">
+<div class="md:container link-card-block">
   {% for link_card in self %}
   <div class="link-card card v1">
     <a href="{% pageurl link_card.value.link %}">

@@ -3,8 +3,8 @@ module.exports = {
   darkMode: 'class',
   theme: {
     container: {
-      // center: true,
-      // padding: '1.25rem',
+      center: true,
+      padding: '2.25rem',
     },
     extend: {
       colors: {

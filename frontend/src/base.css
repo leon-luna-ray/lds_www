@@ -1,6 +1,6 @@
 @layer base{
     body {
-        @apply text-slate-900 dark:bg-gray-900 dark:text-gray-200;
+        @apply text-slate-900 dark:bg-gray-900 dark:text-gray-200 h-full;
     }
 
 }
