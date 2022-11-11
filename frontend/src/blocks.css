@@ -13,7 +13,10 @@
   }
   /* todo w-screen? */
   .image-text-tout {
-    @apply grid md:grid-cols-2 gap-x-[3.5rem] gap-y-[4rem] justify-center p-[3rem] md:p-[3.5rem] lg:p-[4rem] lg:pl-[6rem] items-center md:my-[3rem] bg-slate-100 dark:bg-gray-700;
+    @apply w-full py-[3rem] bg-slate-100 dark:bg-gray-700 flex justify-center items-center ;
+  }
+  .image-text-tout .container {
+    @apply grid md:grid-cols-2 gap-x-[3.5rem] gap-y-[4rem] justify-center items-center;
   }
   .image-text-tout .image {
     @apply flex justify-center;

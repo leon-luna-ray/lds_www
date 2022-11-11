@@ -554,15 +554,14 @@ body {
 /* todo w-screen? */
 
 .image-text-tout {
-  display: grid;
+  display: flex;
+  width: 100%;
   align-items: center;
   justify-content: center;
-  -moz-column-gap: 3.5rem;
-       column-gap: 3.5rem;
-  row-gap: 4rem;
   --tw-bg-opacity: 1;
   background-color: rgb(241 245 249 / var(--tw-bg-opacity));
-  padding: 3rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 
 .dark .image-text-tout {
@@ -570,19 +569,18 @@ body {
   background-color: rgb(55 65 81 / var(--tw-bg-opacity));
 }
 
-@media (min-width: 768px) {
-  .image-text-tout {
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    padding: 3.5rem;
-  }
+.image-text-tout .container {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  -moz-column-gap: 3.5rem;
+       column-gap: 3.5rem;
+  row-gap: 4rem;
 }
 
-@media (min-width: 1024px) {
-  .image-text-tout {
-    padding: 4rem;
-    padding-left: 6rem;
+@media (min-width: 768px) {
+  .image-text-tout .container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -771,6 +769,10 @@ body {
 
 .container {
   width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 2.25rem;
+  padding-left: 2.25rem;
 }
 
 @media (min-width: 640px) {
@@ -927,8 +929,61 @@ body {
 }
 
 @media (min-width: 768px) {
+  .md\:container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 2.25rem;
+    padding-left: 2.25rem;
+  }
+
+  @media (min-width: 640px) {
+    .md\:container {
+      max-width: 640px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .md\:container {
+      max-width: 768px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .md\:container {
+      max-width: 1024px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .md\:container {
+      max-width: 1280px;
+    }
+  }
+
+  @media (min-width: 1536px) {
+    .md\:container {
+      max-width: 1536px;
+    }
+  }
+
   .md\:hidden {
     display: none;
+  }
+
+  .image-text-tout .md\:container {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    -moz-column-gap: 3.5rem;
+         column-gap: 3.5rem;
+    row-gap: 4rem;
+  }
+
+  @media (min-width: 768px) {
+    .image-text-tout .md\:container {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
   }
 
   .md\:px-4 {
