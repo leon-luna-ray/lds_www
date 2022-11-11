@@ -8,6 +8,7 @@ from wagtail.core.blocks import (
     StructBlock,
     BooleanBlock,
     TextBlock,
+    URLBlock,
 )
 
 
@@ -31,8 +32,21 @@ class LinkBlock(StructBlock):
     """
     Link with text title
     """
-    link = PageChooserBlock(required=True)
     title = CharBlock(required=False)
+    link = StreamBlock(
+        [
+            ('page_link', PageChooserBlock(
+                required=False,
+                icon='home',
+            )),
+            ('external_link', URLBlock(
+                required=False,
+                icon='link',
+            )),
+        ],
+        max_num=1,
+        required=False,
+    )
 
 
 class LinkWithTextBlock(LinkBlock):
@@ -58,11 +72,18 @@ class LinkWithImageBlock(LinkWithTextBlock):
     image = ImageChooserBlock(required=False)
 
 
-class LinkCardBlock(StreamBlock):
+class LinkCardBlock(StructBlock):
     """
     Stream block providing all page builder components for main body
     """
-    link_card = LinkWithImageBlock(min_num=2)
+    link_cards = StreamBlock(
+        [
+            ('card', LinkWithImageBlock())
+        ],
+        block_counts={
+            'card': {'min_num': 2},
+        },
+    )
 
     class Meta:
         template = '_blocks/link_card_blk.html'
