@@ -28,11 +28,19 @@ class FreeTextBlock(StructBlock):
         template = '_blocks/free_text_blk.html'
 
 
+class ImageWithTextBlock(StructBlock):
+    """
+    Image and text
+    """
+    title = CharBlock(required=False)
+    text = TextBlock()
+    image = ImageChooserBlock(required=False)
+
+
 class LinkBlock(StructBlock):
     """
     Link with text title
     """
-    title = CharBlock(required=False)
     link = StreamBlock(
         [
             ('page_link', PageChooserBlock(
@@ -47,6 +55,7 @@ class LinkBlock(StructBlock):
         max_num=1,
         required=False,
     )
+    title = CharBlock(required=False)
 
 
 class LinkWithTextBlock(LinkBlock):
@@ -54,15 +63,6 @@ class LinkWithTextBlock(LinkBlock):
     Link with text title amd description
     """
     text = RichTextBlock(required=False, features=['bold', 'italic', ])
-
-
-class ImageWithTextBlock(StructBlock):
-    """
-    Image and text
-    """
-    title = CharBlock(required=False)
-    text = TextBlock()
-    image = ImageChooserBlock(required=False)
 
 
 class LinkWithImageBlock(LinkWithTextBlock):
@@ -76,17 +76,48 @@ class LinkCardBlock(StructBlock):
     """
     Stream block providing all page builder components for main body
     """
-    link_cards = StreamBlock(
+    title = CharBlock()
+    text = TextBlock(required=False)
+    image = ImageChooserBlock()
+    link = StreamBlock(
         [
-            ('card', LinkWithImageBlock())
+            ('page_link', PageChooserBlock(
+                required=False,
+                icon='home',
+            )),
+            ('external_link', URLBlock(
+                required=False,
+                icon='link',
+            )),
         ],
-        block_counts={
-            'card': {'min_num': 2},
-        },
+        max_num=1,
+        required=True,
     )
+    
+    def get_context(self, value, parent_context=None):
+        context = super().get_context(value, parent_context=parent_context)
+        for block in value['link']:
+                if block.block_type not in 'page_link':
+                    context['link_url'] = block
+                else:
+                    context['link_url'] = block.value.url
+        return context
 
     class Meta:
         template = '_blocks/link_card_blk.html'
+
+
+class LinkCardsBlock(StructBlock):
+    link_cards = StreamBlock(
+        [
+            ('card', LinkCardBlock())
+        ],
+        block_counts={
+            'card': {'min_num': 2}
+        }
+    )
+    class Meta:
+        template = '_blocks/link_cards_blk.html'
 
 
 class ImageWithTextToutBlock(StructBlock):
@@ -123,7 +154,7 @@ class BodySectionBlock(StreamBlock):
     """
     free_text = FreeTextBlock()
     image_text_tout = ImageWithTextToutBlock()
-    link_card_block = LinkCardBlock()
+    link_cards_block = LinkCardsBlock()
     three_column_tout = ThreeColumnToutBlock()
 
     class Meta:

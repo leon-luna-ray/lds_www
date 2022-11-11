@@ -43,6 +43,7 @@ class HomePage(BasePage):
         FieldPanel('content'),
     ]
 
+
 # About
 
 
@@ -58,6 +59,7 @@ class AboutPage(BasePageWithOptions):
     content_panels = Page.content_panels + [
         FieldPanel('content'),
     ]
+
 
     # config
     max_count = 1
