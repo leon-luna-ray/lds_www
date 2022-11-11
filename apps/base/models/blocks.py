@@ -46,9 +46,9 @@ class ImageWithTextBlock(StructBlock):
     """
     Image and text
     """
-    title = CharBlock()
+    title = CharBlock(required=False)
     text = TextBlock()
-    image = ImageChooserBlock()
+    image = ImageChooserBlock(required=False)
 
 
 class LinkWithImageBlock(LinkWithTextBlock):
@@ -77,12 +77,20 @@ class ImageWithTextToutBlock(StructBlock):
     class Meta:
         template = '_blocks/image_text_tout.html'
 
-class ThreeColumnToutBlock(StreamBlock):
+
+class ThreeColumnToutBlock(StructBlock):
     """
     Full width three column tout
     """
-    intro = TextBlock()
-    column = ImageWithTextBlock(min_num=3, max_num=3)
+    intro = TextBlock(required=False)
+    columns = StreamBlock(
+        [
+            ('column', ImageWithTextBlock()),
+        ],
+        block_counts={
+            'column': {'min_num': 3, 'max_num': 3},
+        },
+    )
 
     class Meta:
         template = "_blocks/three_column_tout.html"
