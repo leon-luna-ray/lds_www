@@ -21,6 +21,7 @@ class HomePage(BasePage):
         },
         blank=False,
         null=True,
+        use_json_field=False,
     )
 
     content = StreamField([
@@ -29,6 +30,7 @@ class HomePage(BasePage):
         blank=False,
         null=True,
         max_num=1,
+        use_json_field=False,
     )
 
     # Link Block to other pages (block (image + text + page or url))
@@ -54,6 +56,7 @@ class AboutPage(BasePageWithOptions):
         blank=False,
         null=True,
         max_num=1,
+        use_json_field=False,
     )
 
     content_panels = BasePageWithOptions.intro_with_image_panel + [
