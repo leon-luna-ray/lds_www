@@ -3,8 +3,10 @@
     <div class="contact">
         <div class="item" aria-hidden="true"></div>
         <div class="item address">
+        {% if settings.site_settings.ContactInfo.street %}
             <span>{{ settings.site_settings.ContactInfo.street }}, {{ settings.site_settings.ContactInfo.colonia}}</span>
             <span>{{settings.site_settings.ContactInfo.postal_code}} {{settings.site_settings.ContactInfo.city}}, {{settings.site_settings.ContactInfo.state}}, {{settings.site_settings.ContactInfo.country}}</span>
+        {% endif %}
         </div>
         <div class="item">
             {% if settings.site_settings.ContactInfo.phone %}

@@ -6,12 +6,10 @@
         @apply pb-[2rem];
     }
     footer {
-        @apply md:pt-[3rem] pb-[1.5rem] flex justify-center w-full;
-        /* border: 3px solid blue; */
+        @apply py-[1.5rem] flex justify-center w-full;
     }
 
     #footer .contact {
-        /* border: 3px solid red; */
         @apply grid grid-cols-1 md:grid-cols-3 text-sm gap-x-[6rem] gap-y-3;
     }
 
