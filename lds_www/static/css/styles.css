@@ -437,8 +437,16 @@ footer {
   display: flex;
   width: 100%;
   justify-content: center;
-  padding-top: 3rem;
   padding-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  footer {
+    padding-top: 3rem;
+  }
+}
+
+footer {
   /* border: 3px solid blue; */
 }
 
@@ -448,6 +456,7 @@ footer {
   grid-template-columns: repeat(1, minmax(0, 1fr));
   -moz-column-gap: 6rem;
        column-gap: 6rem;
+  row-gap: 0.75rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
 }
