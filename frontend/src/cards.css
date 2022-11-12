@@ -3,7 +3,7 @@
         @apply grid gap-4 grid-cols-1 md:grid-cols-2 justify-center;
     }
     .card.v1 {
-        @apply bg-gray-200 dark:bg-slate-600 hover:cursor-pointer hover:shadow-xl relative;
+        @apply bg-gray-200 dark:bg-slate-600 hover:cursor-pointer dark:shadow-gray-600 hover:shadow-lg relative;
     }
     .card.v1 h3 {
         @apply text-2xl;

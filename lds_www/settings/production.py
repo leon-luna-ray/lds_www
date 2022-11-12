@@ -1,10 +1,11 @@
 from .base import *
 import os
 
+# Todo move to env
 DEBUG = False
-ALLOWED_HOSTS = ['ldswww-production.up.railway.app']
+ALLOWED_HOSTS = ['ldswww-production.up.railway.app', 'www.lunadentalstudio.com', 'lunadentalstudio.com',]
 STATICFILES_STORAGE="whitenoise.storage.CompressedManifestStaticFilesStorage"
-CSRF_TRUSTED_ORIGINS = ['https://ldswww-production.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://ldswww-production.up.railway.app', 'https://lunadentalstudio.com', 'https://www.lunadentalstudio.com']
 
 DEFAULT_FILE_STORAGE = 'lds_www.settings.storage_backends.MediaStorage'
 
