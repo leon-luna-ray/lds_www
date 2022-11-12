@@ -21,11 +21,13 @@ INSTALLED_APPS = [
     "apps.home",
     "apps.services",
     "apps.search",
+    "apps.site_settings",
 
     # Wagtail
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
     "wagtail.contrib.modeladmin",
+    "wagtail.contrib.settings",
     "wagtail.embeds",
     "wagtail.sites",
     "wagtail.users",
