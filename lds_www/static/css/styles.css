@@ -697,6 +697,7 @@ footer {
 
 .image-text-tout .container {
   display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
   align-items: center;
   justify-content: center;
   -moz-column-gap: 3.5rem;
@@ -713,15 +714,21 @@ footer {
 .image-text-tout .image {
   display: flex;
   justify-content: center;
+  border-radius: 9999px;
 }
 
 .image-text-tout .image img {
-  max-height: 400px;
-  max-width: 400px;
   border-radius: 9999px;
   border-width: 2px;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .image-text-tout .image img {
+    max-height: 400px;
+    max-width: 400px;
+  }
 }
 
 .image-text-tout .text h2 {
@@ -1088,6 +1095,7 @@ footer {
 
   .image-text-tout .md\:container {
     display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
     align-items: center;
     justify-content: center;
     -moz-column-gap: 3.5rem;
