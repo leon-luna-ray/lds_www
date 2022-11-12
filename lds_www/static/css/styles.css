@@ -1014,10 +1014,6 @@ footer {
   order: 9999;
 }
 
-.order-none {
-  order: 0;
-}
-
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
