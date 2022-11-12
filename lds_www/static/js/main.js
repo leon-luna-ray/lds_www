@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  const body = $('html');
+  const html = $('html');
   const navIcons = $('.nav-icon');
 
   // Dark Mode
@@ -22,7 +22,7 @@ $(document).ready(function () {
       $('#black-logo').toggleClass('hidden');
       navIcons.toggleClass('invert-icons');
     }
-    body.toggleClass('dark');
+    html.toggleClass('dark');
   }
 
   window
@@ -42,27 +42,11 @@ $(document).ready(function () {
   });
 
   const menuBtn = $('#hamburger-menu');
-  const closeBtn = $('#close-menu-btn');
-  const mobileMenu = $('#mobile-menu');
-  const header = $('#site-header');
-  const logo = $('.header-logo img');
-  const navLinks = $('.nav-link');
 
   // TODO Mobile Menu
   menuBtn.on('click', function (e) {
     e.preventDefault();
-    console.log('clicked open');
-    mobileMenu.removeClass('opacity-0 hidden');
-    mobileMenu.addClass('opacity-95 z-90 mobile-menu-open');
-    menuBtn.addClass('hidden');
-
-    header.addClass('bg-white dark:bg-gray-900');
-    navLinks.removeAttr('style');
-    navIcons.removeAttr('style');
-    logo.removeAttr('style');
-  });
-
-  closeBtn.on('click', function () {
-    console.log('clicked close');
+    // Temporary functionality until mobile menu is functional
+    toggleDarkMode();
   });
 });
