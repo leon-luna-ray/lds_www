@@ -2,6 +2,29 @@
     body {
         @apply text-slate-900 dark:bg-gray-900 dark:text-gray-200 h-full;
     }
+    main {
+        @apply pb-[2rem];
+    }
+    footer {
+        @apply pt-[3rem] pb-[1.5rem] flex justify-center w-full;
+        /* border: 3px solid blue; */
+    }
+
+    #footer .contact {
+        /* border: 3px solid red; */
+        @apply grid grid-cols-1 md:grid-cols-3 text-sm gap-x-[6rem];
+    }
+
+    #footer .contact .item {
+        @apply flex flex-col text-center;
+    }
+
+    #footer .contact a {
+        @apply underline;
+    }
+    #footer .copyright {
+        @apply text-xs flex justify-center pt-5;
+    }
     .bg-blue-gradient {
         @apply bg-gradient-to-r from-cyan-500 to-blue-400  dark:from-slate-800 dark:to-gray-700;
     }
