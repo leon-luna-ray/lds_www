@@ -24,8 +24,8 @@ class ContactInfo(BaseSetting):
     instagram = models.URLField(blank=True, null=True)
 
     panels = [
-            FieldPanel('company_name'),
         MultiFieldPanel([
+            FieldPanel('company_name'),
             FieldPanel('admin_name'),
             FieldPanel('phone'),
             FieldPanel('email'),
