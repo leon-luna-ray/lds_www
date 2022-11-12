@@ -429,6 +429,21 @@ body {
   color: rgb(229 231 235 / var(--tw-text-opacity));
 }
 
+.bg-blue-gradient {
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+  --tw-gradient-from: #06b6d4;
+  --tw-gradient-to: rgb(6 182 212 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  --tw-gradient-to: #60a5fa;
+}
+
+.dark .bg-blue-gradient {
+  --tw-gradient-from: #1e293b;
+  --tw-gradient-to: rgb(30 41 59 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  --tw-gradient-to: #374151;
+}
+
 #site-header {
   z-index: 10;
   display: flex;
@@ -674,17 +689,7 @@ body {
 }
 
 .three-column-tout {
-  display: grid;
   width: 100%;
-  grid-template-columns: repeat(1, minmax(0, 1fr));
-  -moz-column-gap: 2rem;
-       column-gap: 2rem;
-  row-gap: 3rem;
-  background-image: linear-gradient(to right, var(--tw-gradient-stops));
-  --tw-gradient-from: #06b6d4;
-  --tw-gradient-to: rgb(6 182 212 / 0);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-  --tw-gradient-to: #60a5fa;
   padding-left: 2rem;
   padding-right: 2rem;
   padding-top: 2rem;
@@ -693,18 +698,24 @@ body {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.dark .three-column-tout {
-  --tw-gradient-from: #1f2937;
-  --tw-gradient-to: rgb(31 41 55 / 0);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-  --tw-gradient-to: #1e293b;
+@media (min-width: 768px) {
+  .three-column-tout {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+}
+
+.three-column-tout .container {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
+  row-gap: 3rem;
 }
 
 @media (min-width: 768px) {
-  .three-column-tout {
+  .three-column-tout .container {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    padding-top: 5rem;
-    padding-bottom: 5rem;
   }
 }
 
@@ -1039,6 +1050,20 @@ body {
   @media (min-width: 768px) {
     .image-text-tout .md\:container {
       grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  .three-column-tout .md\:container {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    -moz-column-gap: 2rem;
+         column-gap: 2rem;
+    row-gap: 3rem;
+  }
+
+  @media (min-width: 768px) {
+    .three-column-tout .md\:container {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
   }
 

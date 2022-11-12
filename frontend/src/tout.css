@@ -18,7 +18,10 @@
         @apply text-xl leading-10;
       }
       .three-column-tout {
-        @apply w-full grid grid-cols-1 md:grid-cols-3 gap-x-[2rem] px-[2rem] gap-y-[3rem] py-[2rem] md:py-[5rem] bg-gradient-to-r from-cyan-500 to-blue-400 text-white dark:from-gray-800 dark:to-slate-800;
+        @apply w-full px-[2rem] py-[2rem] md:py-[5rem] text-white;
+      }
+      .three-column-tout .container {
+        @apply grid grid-cols-1 md:grid-cols-3 gap-x-[2rem] gap-y-[3rem];
       }
       .three-column-tout .tout-column {
         @apply flex justify-center items-center flex-col px-5 gap-y-7 text-center;

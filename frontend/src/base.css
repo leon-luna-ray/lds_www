@@ -2,5 +2,7 @@
     body {
         @apply text-slate-900 dark:bg-gray-900 dark:text-gray-200 h-full;
     }
-
+    .bg-blue-gradient {
+        @apply bg-gradient-to-r from-cyan-500 to-blue-400  dark:from-slate-800 dark:to-gray-700;
+    }
 }
