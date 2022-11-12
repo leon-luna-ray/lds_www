@@ -5,8 +5,20 @@
     main {
         @apply pb-[2rem];
     }
+    h1 {
+        @apply text-3xl;
+    }
+    h2 {
+        @apply text-2xl;
+    }
+    h3 {
+        @apply text-xl;
+    }
+    h4 {
+        @apply text-lg;
+    }
     footer {
-        @apply py-[1.5rem] flex justify-center w-full;
+        @apply pb-[1.5rem] pt-[1rem] flex justify-center w-full;
     }
 
     #footer .contact {

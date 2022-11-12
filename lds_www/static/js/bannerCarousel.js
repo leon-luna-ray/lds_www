@@ -39,6 +39,7 @@ $(document).ready(function () {
     autoplaySpeed:2000,
     loop: true,
     margin: 10,
+    dots: false,
     // nav:true,
     responsive: {
       0: {
