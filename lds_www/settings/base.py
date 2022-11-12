@@ -16,9 +16,18 @@ load_dotenv(os.path.join(BASE_DIR, ".env"))
 SECRET_KEY = os.getenv("SECRET_KEY")
 
 INSTALLED_APPS = [
+    # Project Apps
+    "apps.base",
+    "apps.home",
+    "apps.services",
+    "apps.search",
+    "apps.site_settings",
+
+    # Wagtail
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
     "wagtail.contrib.modeladmin",
+    "wagtail.contrib.settings",
     "wagtail.embeds",
     "wagtail.sites",
     "wagtail.users",
@@ -29,24 +38,17 @@ INSTALLED_APPS = [
     "wagtail.admin",
     "wagtail",
     "wagtailmenus",
-
     "modelcluster",
     "taggit",
 
+    # Django
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-
     "storages",
-
-    # Project Apps
-    "apps.base",
-    "apps.home",
-    "apps.services",
-    "apps.search",
 ]
 
 MIDDLEWARE = [
@@ -132,6 +134,9 @@ else:
     DATABASES = {
         "default": dj_database_url.config(default=DATABASE_URL, conn_max_age=1800),
     }
+
+
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 
 # Static files (CSS, JavaScript, Images)

@@ -27,12 +27,21 @@
     </a>
     {% endfor %} 
     <div id="nav-icons">
-      <a href="https://www.facebook.com/lunadentalstudio/" target="_blank">
-        <img class="nav-icon invert-icons" src="{% static 'images/icons/icons8-facebook.svg' %}" alt="">
+      {% if settings.site_settings.ContactInfo.facebook %}
+      <a href="{{ settings.site_settings.ContactInfo.facebook }}" target="_blank">
+        <img class="nav-icon invert-icons" src="{% static 'images/icons/icons8-facebook.svg' %}" alt="facebook">
       </a>
-      <a href="https://www.instagram.com/lunadentalstudio/" target="_blank">
-        <img class="nav-icon invert-icons" src="{% static 'images/icons/icons8-instagram.svg' %}" alt="">
+      {% endif %}
+      {% if settings.site_settings.ContactInfo.instagram %}
+      <a href="{{ settings.site_settings.ContactInfo.instagram }}" target="_blank">
+        <img class="nav-icon invert-icons" src="{% static 'images/icons/icons8-instagram.svg' %}" alt="instagram">
       </a>
+      {% endif %}
+      {% if settings.site_settings.ContactInfo.email %}
+      <a href="mailto:{{ settings.site_settings.ContactInfo.email }}">
+        <img class="nav-icon invert-icons" src="{% static 'images/icons/mail.svg' %}" alt="email">
+      </a>
+      {% endif %}
       <img id="dark-mode-btn" class="nav-icon invert-icons" src="{% static 'images/icons/icons8-idea.svg' %}" alt="">
     </div>
   </nav>

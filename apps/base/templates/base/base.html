@@ -35,6 +35,9 @@
             {% block content %}{% endblock %}
         </main>
         {% comment %} TODO add footer tag + component {% endcomment %}
+        <footer>
+            {% include 'components/footer.html' %}
+        </footer>
 
         {# Global javascript #}
         <script type="text/javascript" src="{% static 'js/jquery/jquery.min.js' %}"></script>

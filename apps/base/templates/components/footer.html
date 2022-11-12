@@ -1,0 +1,25 @@
+{% load wagtailcore_tags %}
+<div id="footer">
+    <div class="contact">
+        <div class="item" aria-hidden="true"></div>
+        <div class="item address">
+            <span>{{ settings.site_settings.ContactInfo.street }}, {{ settings.site_settings.ContactInfo.colonia}}</span>
+            <span>{{settings.site_settings.ContactInfo.postal_code}} {{settings.site_settings.ContactInfo.city}}, {{settings.site_settings.ContactInfo.state}}, {{settings.site_settings.ContactInfo.country}}</span>
+        </div>
+        <div class="item">
+            {% if settings.site_settings.ContactInfo.phone %}
+            <span>
+                Tel: {{ settings.site_settings.ContactInfo.phone }}
+            </span>
+            {% endif %}
+            {% if settings.site_settings.ContactInfo.email %}
+            <span>
+                Email: <a href="mailto:{{ settings.site_settings.ContactInfo.email }}">{{ settings.site_settings.ContactInfo.email }}</a>
+            </span>
+            {% endif %}
+        </div>
+    </div>
+    <div class="copyright">
+        Ⓒ {% now "Y" %} {{ settings.site_settings.ContactInfo.company_name }}
+    </div>
+</div>

@@ -1,4 +1,5 @@
 from django.db import models
+
 from wagtail.models import Page
 from wagtail.fields import RichTextField, StreamField
 from wagtail.admin.panels import FieldPanel
@@ -9,7 +10,6 @@ from apps.base.models.blocks import BodySectionBlock
 
 
 class HomePage(BasePage):
-    intro_text = RichTextField(null=True)
 
     banner_carousel = StreamField(
         [
@@ -22,6 +22,7 @@ class HomePage(BasePage):
         },
         blank=False,
         null=True,
+        use_json_field=False,
     )
 
     content = StreamField([
@@ -30,6 +31,7 @@ class HomePage(BasePage):
         blank=False,
         null=True,
         max_num=1,
+        use_json_field=False,
     )
 
     # Link Block to other pages (block (image + text + page or url))
@@ -40,17 +42,28 @@ class HomePage(BasePage):
     max_count = 1
     subpage_types = ['home.AboutPage', 'services.ServicesLandingPage']
     content_panels = Page.content_panels + [
-        FieldPanel('intro_text'),
         FieldPanel('banner_carousel'),
         FieldPanel('content'),
     ]
+
 
 # About
 
 
 class AboutPage(BasePageWithOptions):
+    content = StreamField([
+        ('sections', BodySectionBlock())
+    ],
+        blank=False,
+        null=True,
+        max_num=1,
+        use_json_field=False,
+    )
 
-    content_panels = BasePageWithOptions.intro_with_image_panel + []
+    content_panels = BasePageWithOptions.intro_with_image_panel + [
+        FieldPanel('content'),
+    ]
+
 
     # config
     max_count = 1

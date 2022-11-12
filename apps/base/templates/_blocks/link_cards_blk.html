@@ -1,0 +1,6 @@
+{% load static wagtailcore_tags wagtailimages_tags %}
+<div class="md:container link-card-block">
+    {% for card in self.link_cards %}
+        {% include_block card %}
+    {% endfor %}
+</div>
