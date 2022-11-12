@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  const body = $('html');
+  const html = $('html');
   const navIcons = $('.nav-icon');
 
   // Dark Mode
@@ -22,7 +22,7 @@ $(document).ready(function () {
       $('#black-logo').toggleClass('hidden');
       navIcons.toggleClass('invert-icons');
     }
-    body.toggleClass('dark');
+    html.toggleClass('dark');
   }
 
   window
@@ -41,13 +41,12 @@ $(document).ready(function () {
     toggleDarkMode();
   });
 
+  const menuBtn = $('#hamburger-menu');
+
   // TODO Mobile Menu
-  $('#hamburger-menu').on('click', function(e){
+  menuBtn.on('click', function (e) {
     e.preventDefault();
-
-    $('#mobile-menu').removeClass('opacity-0 h-0');
-    $('#mobile-menu').addClass('opacity-100 h-full')
-  })
-
-
+    // Temporary functionality until mobile menu is functional
+    toggleDarkMode();
+  });
 });

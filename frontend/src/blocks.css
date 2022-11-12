@@ -3,14 +3,15 @@
     @apply justify-center;
   }
   .body-section {
-    @apply mt-6 w-full flex justify-center;
+    @apply w-full flex justify-center;
   }
   .body-section:first-child {
     @apply mt-0;
   }
-  .free-text-block h3 {
-    @apply text-3xl;
+  .free-text-block {
+    @apply grid gap-y-3 px-0 md:px-4 lg:px-6 w-full;
   }
-  /* todo w-screen? */
-
+  .free-text-block .container {
+    @apply flex justify-center items-center;
+  }
 }

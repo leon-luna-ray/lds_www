@@ -28,9 +28,12 @@
 
     <body class="{% block body_class %}{% endblock %}">
         {% wagtailuserbar %}
+        {% include 'components/mobile_menu.html' %}
         <header>
             {% main_menu max_levels=1 template='components/nav.html'%}
+
         </header>
+
         <main>
             {% block content %}{% endblock %}
         </main>
