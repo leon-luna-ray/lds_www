@@ -2,9 +2,12 @@
 
 <div class="image-text-tout bg-gradient">
   <div class="container">
-    <div class="text {% if self.reversed %}order-last{% endif %}">
-      <h2>{{ self.title }}</h2>
-      <p>{{ self.text }}</p>
+    <div class="text {% if self.reverse %}order-last{% endif %}">
+      <div class="titles">
+        {% if self.title %}<h2>{{ self.title }}</h2>{% endif %}
+        {% if self.subtitle %}<h3>{{ self.subtitle }}</h3>{% endif %}       
+      </div>
+      <p>{{ self.text|richtext }}</p>
     </div>
     <div class="image">{% image self.image width-500 %}</div>
   </div>
