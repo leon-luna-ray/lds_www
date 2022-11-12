@@ -12,9 +12,9 @@ $(document).ready(function () {
     logo.css({ opacity: '0' });
     navLinks.css({ color: '#cacaca' });
     navIcons.css({
-      "-webkit-filter": "invert(90%)",
-      "filter": "invert(90%)"
-    })
+      '-webkit-filter': 'invert(90%)',
+      filter: 'invert(90%)',
+    });
   }
   // on load
   if ($(window).scrollTop() === 0 && bannerCarousel) {
@@ -22,6 +22,9 @@ $(document).ready(function () {
   }
   // on scroll
   $(window).scroll(function () {
+    const mobileMenuOpen = $('#mobile-menu').hasClass('mobile-menu-open');
+    if (mobileMenuOpen) return;
+    
     const scrollTop = $(window).scrollTop();
     if (scrollTop === 0) {
       transparentNav();
@@ -36,7 +39,7 @@ $(document).ready(function () {
   // Owl Carousel
   $('.owl-carousel').owlCarousel({
     autoplay: true,
-    autoplaySpeed:2000,
+    autoplaySpeed: 2000,
     loop: true,
     margin: 10,
     dots: false,

@@ -3,7 +3,7 @@
         @apply grid md:gap-5 md:py-5 grid-cols-1 md:grid-cols-2 justify-center;
     }
     .card {
-        @apply hover:cursor-pointer dark:shadow-gray-600 hover:shadow-lg bg-gradient-to-r from-slate-200 to-gray-100  dark:from-slate-800 dark:to-gray-700;
+        @apply hover:cursor-pointer dark:shadow-gray-600 hover:shadow-lg ;
     }
     .card.v1 {
         @apply relative;
@@ -13,7 +13,6 @@
     }
     .card.v1 .icon {
         @apply h-[20px];
-        /* border: 3px solid red; */
     }
     .card.v1 .text {
         @apply p-5 h-[175px] w-[90%];

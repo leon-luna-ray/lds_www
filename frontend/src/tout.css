@@ -11,9 +11,6 @@
       .image-text-tout .image img {
         @apply object-cover rounded-full max-h-[80%] max-w-[80%] md:max-h-[400px] md:max-w-[400px] border-2;
       }
-      /* .image-text-tout .text {
-        @apply text-center md:text-left;
-      } */
       .image-text-tout .text h2 {
         @apply pb-5 font-bold;
       }

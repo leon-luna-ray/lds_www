@@ -510,14 +510,30 @@ footer {
   --tw-gradient-to: #374151;
 }
 
+.bg-gradient {
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+  --tw-gradient-from: #f3f4f6;
+  --tw-gradient-to: rgb(243 244 246 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  --tw-gradient-to: #e2e8f0;
+}
+
+.dark .bg-gradient {
+  --tw-gradient-from: #1e293b;
+  --tw-gradient-to: rgb(30 41 59 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  --tw-gradient-to: #374151;
+}
+
 #site-header {
-  z-index: 10;
+  z-index: 5;
   display: flex;
   width: 100%;
   justify-content: space-between;
+  padding-left: 1rem;
+  padding-right: 1rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  padding-left: 1rem;
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 300ms;
@@ -538,7 +554,7 @@ footer {
 }
 
 #site-header .header-logo img {
-  width: 175px;
+  width: 180px;
 }
 
 @media (min-width: 768px) {
@@ -585,8 +601,6 @@ footer {
   filter: invert(100%);
 }
 
-/* home page header banner */
-
 #banner-carousel .image img {
   height: 350px;
   -o-object-fit: cover;
@@ -599,17 +613,20 @@ footer {
   }
 }
 
+#hamburger-menu {
+  z-index: 6;
+}
+
+#hamburger-menu:hover {
+  cursor: pointer;
+}
+
 #hamburger-menu img {
   height: 20px;
 }
 
-#hamburger-menu img:hover {
-  cursor: pointer;
-}
-
 #mobile-menu {
-  --tw-bg-opacity: 1;
-  background-color: rgb(26 26 26 / var(--tw-bg-opacity));
+  /* @apply dark:bg-gray-900; */
 }
 
 .sections-block {
@@ -669,14 +686,6 @@ footer {
   }
 }
 
-.card {
-  background-image: linear-gradient(to right, var(--tw-gradient-stops));
-  --tw-gradient-from: #e2e8f0;
-  --tw-gradient-to: rgb(226 232 240 / 0);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-  --tw-gradient-to: #f3f4f6;
-}
-
 .card:hover {
   cursor: pointer;
   --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
@@ -685,10 +694,6 @@ footer {
 }
 
 .dark .card {
-  --tw-gradient-from: #1e293b;
-  --tw-gradient-to: rgb(30 41 59 / 0);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-  --tw-gradient-to: #374151;
   --tw-shadow-color: #4b5563;
   --tw-shadow: var(--tw-shadow-colored);
 }
@@ -706,7 +711,6 @@ footer {
 
 .card.v1 .icon {
   height: 20px;
-  /* border: 3px solid red; */
 }
 
 .card.v1 .text {
@@ -783,10 +787,6 @@ footer {
     max-width: 400px;
   }
 }
-
-/* .image-text-tout .text {
-        @apply text-center md:text-left;
-      } */
 
 .image-text-tout .text h2 {
   padding-bottom: 1.25rem;
@@ -993,10 +993,6 @@ footer {
   position: fixed;
 }
 
-.absolute {
-  position: absolute;
-}
-
 .relative {
   position: relative;
 }
@@ -1005,8 +1001,12 @@ footer {
   top: 0px;
 }
 
-.z-50 {
-  z-index: 50;
+.z-\[90\] {
+  z-index: 90;
+}
+
+.z-\[10\] {
+  z-index: 10;
 }
 
 .order-last {
@@ -1034,6 +1034,18 @@ footer {
   height: 0px;
 }
 
+.h-screen {
+  height: 100vh;
+}
+
+.w-0 {
+  width: 0px;
+}
+
+.w-screen {
+  width: 100vw;
+}
+
 .w-full {
   width: 100%;
 }
@@ -1042,12 +1054,17 @@ footer {
   align-items: center;
 }
 
+.justify-center {
+  justify-content: center;
+}
+
 .justify-between {
   justify-content: space-between;
 }
 
-.overflow-auto {
-  overflow: auto;
+.bg-gray-900 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(26 26 26 / var(--tw-bg-opacity));
 }
 
 .bg-white {
@@ -1064,6 +1081,11 @@ footer {
   font-weight: 700;
 }
 
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
 .underline {
   text-decoration-line: underline;
 }
@@ -1076,23 +1098,18 @@ footer {
   opacity: 0;
 }
 
-.transition-opacity {
-  transition-property: opacity;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.duration-300 {
-  transition-duration: 300ms;
-}
-
-.ease-in-out {
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+.duration-700 {
+  transition-duration: 700ms;
 }
 
 .dark .dark\:bg-gray-900 {
   --tw-bg-opacity: 1;
   background-color: rgb(26 26 26 / var(--tw-bg-opacity));
+}
+
+.dark .dark\:invert {
+  --tw-invert: invert(100%);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 @media (min-width: 768px) {

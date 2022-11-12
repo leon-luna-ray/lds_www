@@ -38,4 +38,7 @@
     .bg-blue-gradient {
         @apply bg-gradient-to-r from-cyan-500 to-blue-400  dark:from-slate-800 dark:to-gray-700;
     }
+    .bg-gradient {
+        @apply bg-gradient-to-r from-gray-100  to-slate-200 dark:from-slate-800 dark:to-gray-700;
+    }
 }
