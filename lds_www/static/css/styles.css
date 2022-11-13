@@ -629,6 +629,37 @@ footer {
   /* @apply dark:bg-gray-900; */
 }
 
+.page-header {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  border-top-width: 2px;
+}
+
+.dark .page-header {
+  border-style: none;
+}
+
+@media (min-width: 768px) {
+  .page-header {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.page-header .image img {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.page-header .text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  row-gap: 1rem;
+  padding: 1.5rem;
+}
+
 .sections-block {
   justify-content: center;
 }

@@ -1,7 +1,8 @@
 from django.db import models
 from wagtail.core.models import Page
 from wagtail.core.fields import RichTextField
-from wagtail.admin.panels import FieldPanel
+from wagtail.admin.panels import FieldPanel, MultiFieldPanel
+
 
 class BasePage(Page):
     """
@@ -47,9 +48,15 @@ class BasePageWithOptions(BasePage):
     header_image = models.ForeignKey(
         'base.AccessibleImage',
         null=True,
-        blank=True,
+        blank=False,
         on_delete=models.SET_NULL,
         related_name='+')
+
+    reverse_header = models.BooleanField(
+        null=False,
+        blank=False,
+        default=False,
+    )
 
     intro_only_panel = BasePage.content_panels + [
         FieldPanel('intro'),
@@ -57,7 +64,11 @@ class BasePageWithOptions(BasePage):
 
     intro_with_image_panel = BasePage.content_panels + [
         FieldPanel('intro'),
-        FieldPanel('header_image'),
+        MultiFieldPanel([
+            FieldPanel('header_image'),
+            FieldPanel('reverse_header'),
+        ], heading="Header image"),
+
     ]
 
     class Meta:
