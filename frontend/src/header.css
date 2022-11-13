@@ -31,4 +31,13 @@
     #mobile-menu {
         /* @apply dark:bg-gray-900; */
     }
+    .page-header {
+        @apply grid grid-cols-1 md:grid-cols-2 border-t-2 dark:border-none;
+    }
+    .page-header .image img {
+        @apply w-full aspect-video object-cover;
+    }
+    .page-header .text {
+        @apply p-[1.5rem] flex flex-col gap-y-4 justify-end;
+    }
 }

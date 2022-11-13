@@ -85,9 +85,10 @@ class LinkCardsBlock(StructBlock):
 
 
 class ImageWithTextToutBlock(StructBlock):
-    title = CharBlock()
-    text = TextBlock()
-    image = ImageChooserBlock(required=False)
+    title = CharBlock(required=False)
+    subtitle = CharBlock(required=False)
+    text = RichTextBlock()
+    image = ImageChooserBlock()
     reverse = BooleanBlock(required=False)
 
     class Meta:
