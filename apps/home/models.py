@@ -40,7 +40,7 @@ class HomePage(BasePage):
 
     # config
     max_count = 1
-    subpage_types = ['home.AboutPage', 'services.ServicesLandingPage']
+    subpage_types = ['home.AboutPage', 'home.GenericPage','services.ServicesLandingPage']
     content_panels = Page.content_panels + [
         FieldPanel('banner_carousel'),
         FieldPanel('content'),
@@ -48,8 +48,6 @@ class HomePage(BasePage):
 
 
 # About
-
-
 class AboutPage(BasePageWithOptions):
     content = StreamField([
         ('sections', BodySectionBlock())
@@ -68,3 +66,23 @@ class AboutPage(BasePageWithOptions):
     # config
     max_count = 1
     template = 'home/about.html'
+
+# Generic
+class GenericPage(BasePageWithOptions):
+    content = StreamField([
+        ('sections', BodySectionBlock())
+    ],
+        blank=False,
+        null=True,
+        max_num=1,
+        use_json_field=False,
+    )
+
+    content_panels = BasePageWithOptions.intro_with_image_panel + [
+        FieldPanel('content'),
+    ]
+
+
+    # config
+    max_count = 1
+    template = 'home/generic.html'
