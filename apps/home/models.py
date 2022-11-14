@@ -84,5 +84,4 @@ class GenericPage(BasePageWithOptions):
 
 
     # config
-    max_count = 1
     template = 'home/generic.html'

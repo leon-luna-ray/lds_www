@@ -9,7 +9,7 @@
     @apply mt-0;
   }
   .free-text-block {
-    @apply grid gap-y-3 px-0 md:px-4 lg:px-6 w-full;
+    @apply grid gap-y-3 px-0 md:px-4 lg:px-6 w-full py-[3rem];
   }
   .free-text-block .container {
     @apply flex justify-center items-center;
