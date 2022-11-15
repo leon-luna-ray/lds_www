@@ -9,9 +9,15 @@
     @apply mt-0;
   }
   .free-text-block {
-    @apply grid gap-y-3 px-0 md:px-4 lg:px-6 w-full py-[3rem];
+    @apply grid gap-y-[4rem] px-0 md:px-4 lg:px-6 w-full py-[1rem] md:py-[2rem];
   }
   .free-text-block .container {
-    @apply flex justify-center items-center;
+    @apply justify-center items-center;
+  }
+  .free-text-block .block-content :not(img) {
+    @apply px-[1rem];
+  }
+  .free-text-block .block-content img {
+    @apply py-[1rem] md:py-0;
   }
 }

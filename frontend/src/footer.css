@@ -1,0 +1,20 @@
+@layer base {
+    footer {
+        @apply pb-[1.5rem] pt-[1rem] flex justify-center w-full border-t-2 dark:border-none bg-gray-50 dark:bg-gray-900;
+    }
+
+    #footer .contact {
+        @apply grid grid-cols-1 md:grid-cols-3 text-sm gap-x-[6rem] gap-y-3;
+    }
+
+    #footer .contact .item {
+        @apply flex flex-col text-center;
+    }
+
+    #footer .contact a {
+        @apply underline;
+    }
+    #footer .copyright {
+        @apply text-xs flex justify-center pt-5;
+    }
+}

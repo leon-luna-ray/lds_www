@@ -1,6 +1,7 @@
 @import "tailwindcss/base";
 @import "./base.css";
 @import "./header.css";
+@import "./footer.css";
 @import "./blocks.css";
 @import "./cards.css";
 @import "./tout.css";

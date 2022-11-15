@@ -9,19 +9,22 @@
         @apply flex justify-center order-1;
       }
       .image-text-tout .image img {
-        @apply object-cover rounded-full max-h-[350px] max-w-[350px] border-2;
+        @apply object-cover rounded-full md:max-h-[350px] md:max-w-[350px] border-2;
       }
       .image-text-tout .text {
         @apply w-full;
       }
       .image-text-tout .text h2 {
-        @apply font-bold pb-2;
+        @apply pb-1;
+      }
+      .image-text-tout .text h3 {
+        @apply font-medium;
       }
       .image-text-tout .text .titles {
-        @apply pb-5;
+        @apply pb-3 md:pb-4;
       }
       .image-text-tout .text p {
-        @apply text-lg leading-10;
+        @apply md:text-lg leading-7 md:leading-10;
       }
       .three-column-tout {
         @apply w-full px-[2rem] py-[2rem] md:py-[5rem] text-white;

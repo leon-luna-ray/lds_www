@@ -32,7 +32,7 @@
         /* @apply dark:bg-gray-900; */
     }
     .page-header {
-        @apply grid grid-cols-1 md:grid-cols-2 border-t-2 dark:border-none;
+        @apply grid grid-cols-1 md:grid-cols-2 md:border-y-2 dark:border-none;
     }
     .page-header .image img {
         @apply w-full aspect-video object-cover;
