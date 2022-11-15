@@ -638,7 +638,6 @@ footer {
   display: flex;
   width: 100%;
   justify-content: center;
-  border-top-width: 2px;
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
   padding-bottom: 1.5rem;
@@ -646,7 +645,6 @@ footer {
 }
 
 .dark footer {
-  border-style: none;
   --tw-bg-opacity: 1;
   background-color: rgb(26 26 26 / var(--tw-bg-opacity));
 }
