@@ -1,0 +1,8 @@
+@layer base {
+    .page {
+        @apply w-full pt-[72px] md:pt-[87px];
+    }
+    #generic .back-btn {
+        border: 4px solid red;
+    }
+}
