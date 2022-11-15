@@ -9,10 +9,10 @@
     @apply mt-0;
   }
   .cta-block {
-    @apply w-full md:py-[2rem];
+    @apply w-full md:py-[3rem];
   }
   .cta-block .inner .block-content {
-    @apply bg-gray-900 text-slate-200 grid grid-cols-1 md:grid-cols-4 hover:shadow-lg hover:cursor-pointer min-h-[200px] dark:border-2 border-gray-400 dark:shadow-gray-700 relative;
+    @apply bg-gray-900 text-slate-200 grid grid-cols-1 md:grid-cols-4 hover:shadow-lg hover:cursor-pointer md:min-h-[250px] dark:border-2 border-gray-400 dark:shadow-gray-700 relative;
   }
 
   .cta-block .block-content .text {

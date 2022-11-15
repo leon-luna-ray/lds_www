@@ -703,15 +703,14 @@ footer {
 
 @media (min-width: 768px) {
   .cta-block {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
   }
 }
 
 .cta-block .inner .block-content {
   position: relative;
   display: grid;
-  min-height: 200px;
   grid-template-columns: repeat(1, minmax(0, 1fr));
   --tw-border-opacity: 1;
   border-color: rgb(156 163 175 / var(--tw-border-opacity));
@@ -736,6 +735,7 @@ footer {
 
 @media (min-width: 768px) {
   .cta-block .inner .block-content {
+    min-height: 250px;
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
