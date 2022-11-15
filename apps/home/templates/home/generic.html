@@ -2,7 +2,7 @@
 {% load wagtailcore_tags wagtailimages_tags  %}
 
 {% block content %}
-<div id="generic" class="w-full">
+<div id="generic" class="page">
     {% include 'components/page_header.html' with page=page %}
     {% for block in page.content %}
         {% include_block block %}

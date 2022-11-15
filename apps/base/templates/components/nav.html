@@ -1,6 +1,6 @@
 {% load static menu_tags wagtailcore_tags %}
 
-<div id="site-header" class="bg-white dark:bg-gray-900 {% if request.path == '/' %}fixed top-0{% endif %}">
+<div id="site-header" class="bg-white dark:bg-gray-900 fixed top-0">
   <div class="header-logo">
     <a href="/">
       <img
@@ -19,11 +19,11 @@
   <nav id="nav-links">
     {% for item in menu_items %}
     <a href="{{ item.href }}">
-      <h4
+      <span
         class="nav-link {% if request.path == item.href %}underline underline-offset-8{% endif %}"
       >
         {{ item.text }}
-      </h4>
+      </span>
     </a>
     {% endfor %} 
     <div id="nav-icons">

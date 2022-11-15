@@ -84,4 +84,5 @@ class GenericPage(BasePageWithOptions):
 
 
     # config
+    parent_page_types = ['home.HomePage']
     template = 'home/generic.html'

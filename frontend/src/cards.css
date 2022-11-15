@@ -17,6 +17,9 @@
     .card.v1 .text {
         @apply p-5 h-[175px] w-[90%];
     }
+    .card.v1 .text span {
+        @apply text-2xl;
+    }
     .card.v1 svg {
         @apply absolute bottom-3 right-3 h-[20];
     }

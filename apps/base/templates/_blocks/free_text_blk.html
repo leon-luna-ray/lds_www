@@ -1,5 +1,5 @@
 {% load wagtailcore_tags wagtailimages_tags %}
 
 <div class="free-text-block">
-  <div class="container">{{ self.content|richtext }}</div>
+  <div class="inner flex flex-col gap-y-2 md:container">{{ self.content|richtext }}</div>
 </div>

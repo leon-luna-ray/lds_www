@@ -2,38 +2,20 @@
     body {
         @apply text-slate-900 dark:bg-gray-900 dark:text-gray-200 h-full;
     }
-    main {
-        @apply pb-[2rem];
-    }
+    /* main {
+        @apply 
+    } */
     h1 {
-        @apply text-3xl;
+        @apply text-3xl font-bold;
     }
     h2 {
-        @apply text-2xl;
+        @apply text-2xl font-bold;
     }
     h3 {
-        @apply text-xl;
+        @apply text-xl font-bold;
     }
     h4 {
-        @apply text-lg;
-    }
-    footer {
-        @apply pb-[1.5rem] pt-[1rem] flex justify-center w-full;
-    }
-
-    #footer .contact {
-        @apply grid grid-cols-1 md:grid-cols-3 text-sm gap-x-[6rem] gap-y-3;
-    }
-
-    #footer .contact .item {
-        @apply flex flex-col text-center;
-    }
-
-    #footer .contact a {
-        @apply underline;
-    }
-    #footer .copyright {
-        @apply text-xs flex justify-center pt-5;
+        @apply text-lg font-bold;
     }
     .bg-blue-gradient {
         @apply bg-gradient-to-r from-cyan-500 to-blue-400  dark:from-slate-800 dark:to-gray-700;

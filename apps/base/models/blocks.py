@@ -33,7 +33,7 @@ class ImageWithTextBlock(StructBlock):
     """
     title = CharBlock(required=False)
     text = TextBlock()
-    image = ImageChooserBlock(required=False)
+    image = ImageChooserBlock()
 
 
 class LinkCardBlock(StructBlock):
@@ -112,6 +112,35 @@ class ThreeColumnToutBlock(StructBlock):
     class Meta:
         template = "_blocks/three_column_tout.html"
 
+class CallToActionBlock(ImageWithTextBlock):
+    link = StreamBlock(
+        [
+            ('page_link', PageChooserBlock(
+                required=False,
+                icon='home',
+            )),
+            ('external_link', URLBlock(
+                required=False,
+                icon='link',
+            )),
+        ],
+        max_num=1,
+        required=True,
+    )
+    reverse = BooleanBlock(required=False)
+
+    def get_context(self, value, parent_context=None):
+        context = super().get_context(value, parent_context=parent_context)
+        for block in value['link']:
+                if block.block_type not in 'page_link':
+                    context['link_url'] = block
+                else:
+                    context['link_url'] = block.value.url
+        return context
+    
+    class Meta:
+        template = '_blocks/cta_blk.html'
+
 
 class BodySectionBlock(StreamBlock):
     """
@@ -121,6 +150,7 @@ class BodySectionBlock(StreamBlock):
     image_text_tout = ImageWithTextToutBlock()
     link_cards_block = LinkCardsBlock()
     three_column_tout = ThreeColumnToutBlock()
+    call_to_action = CallToActionBlock()
 
     class Meta:
         template = '_blocks/body_section_blk.html'
