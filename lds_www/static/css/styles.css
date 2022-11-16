@@ -739,24 +739,43 @@ footer {
 
 .cta-block .block-content .text {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  justify-content: space-between;
   --tw-bg-opacity: 1;
   background-color: rgb(41 41 41 / var(--tw-bg-opacity));
-  padding: 2rem;
+  padding: 1rem;
 }
 
 @media (min-width: 768px) {
   .cta-block .block-content .text {
     grid-column: span 3 / span 3;
+    padding: 2rem;
   }
 }
 
 .cta-block .block-content .text-inner {
+  position: relative;
   display: flex;
-  width: 80%;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .cta-block .block-content .text-inner {
+    width: 80%;
+  }
+}
+
+.cta-block .block-content .text-col {
+  display: flex;
   flex-direction: column;
   row-gap: 0.5rem;
+}
+
+.cta-block .block-content .icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .cta-block .block-content .image img {
@@ -773,10 +792,6 @@ footer {
 }
 
 .cta-block .block-content svg {
-  position: absolute;
-  bottom: 1rem;
-  right: 1rem;
-  height: 20;
   --tw-invert: invert(100%);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }

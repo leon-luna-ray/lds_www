@@ -14,21 +14,24 @@
   .cta-block .inner .block-content {
     @apply bg-gray-900 text-slate-200 grid grid-cols-1 md:grid-cols-4 hover:shadow-lg hover:cursor-pointer md:min-h-[300px] dark:shadow-gray-700 relative;
   }
-
   .cta-block .block-content .text {
-    @apply md:col-span-3 flex flex-col justify-end p-[2rem] bg-gray-800;
+    @apply md:col-span-3 flex justify-between p-[1rem] md:p-[2rem] bg-gray-800;
   }
   .cta-block .block-content .text-inner {
-    @apply flex flex-col gap-y-2 w-[80%];
+    @apply flex flex-col justify-between gap-y-2 md:w-[80%] relative;
+  }
+  .cta-block .block-content .text-col {
+    @apply flex flex-col gap-y-2;
+  }
+  .cta-block .block-content .icon {
+    @apply flex flex-col justify-between;
   }
   .cta-block .block-content .image img {
     @apply h-full object-cover aspect-video md:aspect-square;
   }
-
   .cta-block .block-content svg {
-    @apply absolute bottom-4 right-4 h-[20] invert;
+    @apply invert;
   }
-
   .free-text-block {
     @apply grid gap-y-[4rem] px-0 md:px-4 lg:px-6 w-full py-[1rem] md:py-[2rem];
   }
