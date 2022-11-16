@@ -12,15 +12,21 @@
     @apply w-full md:py-[3rem];
   }
   .cta-block .inner .block-content {
-    @apply bg-gray-900 text-slate-200 grid grid-cols-1 md:grid-cols-4 hover:shadow-lg hover:cursor-pointer md:min-h-[250px] dark:border-2 border-gray-400 dark:shadow-gray-700 relative;
+    @apply bg-gray-900 text-slate-200 grid grid-cols-1 md:grid-cols-4 hover:shadow-lg hover:cursor-pointer md:min-h-[300px] dark:shadow-gray-700 relative;
   }
 
   .cta-block .block-content .text {
-    @apply md:col-span-3 flex flex-col justify-end p-[2rem] bg-gray-900 absolute bottom-0 md:relative; 
+    @apply md:col-span-3 flex flex-col justify-end p-[2rem] bg-gray-800;
+  }
+  .cta-block .block-content .text-inner {
+    @apply flex flex-col gap-y-2 w-[80%];
   }
   .cta-block .block-content .image img {
-    /* border: 3px solid blue; */
     @apply h-full object-cover aspect-video md:aspect-square;
+  }
+
+  .cta-block .block-content svg {
+    @apply absolute bottom-4 right-4 h-[20] invert;
   }
 
   .free-text-block {
