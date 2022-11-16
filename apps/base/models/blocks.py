@@ -11,6 +11,7 @@ from wagtail.core.blocks import (
     URLBlock,
 )
 
+
 class FreeTextBlock(StructBlock):
     """
     Simple free-form text block
@@ -27,12 +28,15 @@ class FreeTextBlock(StructBlock):
         template = '_blocks/free_text_blk.html'
 
 
-class ImageWithTextBlock(StructBlock):
+class TitleWithTextBlock(StructBlock):
+    title = CharBlock(required=False)
+    text = TextBlock()
+
+
+class ImageWithTextBlock(TitleWithTextBlock):
     """
     Image and text
     """
-    title = CharBlock(required=False)
-    text = TextBlock()
     image = ImageChooserBlock()
 
 
@@ -61,10 +65,10 @@ class LinkCardBlock(StructBlock):
     def get_context(self, value, parent_context=None):
         context = super().get_context(value, parent_context=parent_context)
         for block in value['link']:
-                if block.block_type not in 'page_link':
-                    context['link_url'] = block
-                else:
-                    context['link_url'] = block.value.url
+            if block.block_type not in 'page_link':
+                context['link_url'] = block
+            else:
+                context['link_url'] = block.value.url
         return context
 
     class Meta:
@@ -80,6 +84,7 @@ class LinkCardsBlock(StructBlock):
             'card': {'min_num': 2}
         }
     )
+
     class Meta:
         template = '_blocks/link_cards_blk.html'
 
@@ -112,6 +117,21 @@ class ThreeColumnToutBlock(StructBlock):
     class Meta:
         template = "_blocks/three_column_tout.html"
 
+
+class ContactInfoBlock(StructBlock):
+    list_title = CharBlock()
+    list = StreamBlock([
+        ('day', TitleWithTextBlock())
+    ],
+        block_counts={
+        'day': {'min_num': 7, 'max_num': 7}
+    })
+    address = TextBlock()
+    
+    class Meta:
+        template = '_blocks/contact_info.html'
+
+
 class CallToActionBlock(ImageWithTextBlock):
     link = StreamBlock(
         [
@@ -132,12 +152,12 @@ class CallToActionBlock(ImageWithTextBlock):
     def get_context(self, value, parent_context=None):
         context = super().get_context(value, parent_context=parent_context)
         for block in value['link']:
-                if block.block_type not in 'page_link':
-                    context['link_url'] = block
-                else:
-                    context['link_url'] = block.value.url
+            if block.block_type not in 'page_link':
+                context['link_url'] = block
+            else:
+                context['link_url'] = block.value.url
         return context
-    
+
     class Meta:
         template = '_blocks/cta_blk.html'
 
@@ -151,6 +171,7 @@ class BodySectionBlock(StreamBlock):
     link_cards_block = LinkCardsBlock()
     three_column_tout = ThreeColumnToutBlock()
     call_to_action = CallToActionBlock()
+    contact_info = ContactInfoBlock()
 
     class Meta:
         template = '_blocks/body_section_blk.html'

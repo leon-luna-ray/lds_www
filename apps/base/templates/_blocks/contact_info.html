@@ -1,0 +1,18 @@
+<div class="contact-info">
+  <div class="container">
+    <div class="list">
+      <h2>{{ self.list_title }}</21>
+      <ul>
+        {% for item in self.list %}
+        <li><span>{{ item.value.title }}</span> <span>{{ item.value.text }}</span></li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="text">
+      <p>
+        {{ self.address }}
+      </p>
+      {% include '_blocks/map_block.html' %}
+    </div>
+  </div>
+</div>

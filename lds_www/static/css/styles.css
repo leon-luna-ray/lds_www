@@ -844,6 +844,32 @@ footer {
   }
 }
 
+.contact-info {
+  width: 100%;
+  /* border: 3px solid red; */
+}
+
+.contact-info .container {
+  /* border: 3px solid blue; */
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+@media (min-width: 768px) {
+  .contact-info .container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.contact-info .list {
+  /* border: 3px solid green; */
+}
+
+.contact-info .text {
+  display: flex;
+  flex-direction: column;
+}
+
 .link-card-block {
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -1014,7 +1040,18 @@ footer {
   }
 }
 
-.three-column-tout .container {
+.three-column-tout .intro {
+  padding-bottom: 4rem;
+  text-align: center;
+}
+
+.three-column-tout .intro h1 {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 500;
+}
+
+.three-column-tout .columns {
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
   -moz-column-gap: 2rem;
@@ -1023,7 +1060,7 @@ footer {
 }
 
 @media (min-width: 768px) {
-  .three-column-tout .container {
+  .three-column-tout .columns {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
@@ -1269,6 +1306,10 @@ footer {
   row-gap: 0.5rem;
 }
 
+.border {
+  border-width: 1px;
+}
+
 .bg-gray-900 {
   --tw-bg-opacity: 1;
   background-color: rgb(26 26 26 / var(--tw-bg-opacity));
@@ -1370,6 +1411,18 @@ footer {
     justify-content: center;
   }
 
+  .contact-info .md\:container {
+    /* border: 3px solid blue; */
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  @media (min-width: 768px) {
+    .contact-info .md\:container {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
   .image-text-tout .md\:container {
     display: grid;
     grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -1384,20 +1437,6 @@ footer {
     .image-text-tout .md\:container {
       grid-template-columns: repeat(2, minmax(0, 1fr));
       row-gap: 2rem;
-    }
-  }
-
-  .three-column-tout .md\:container {
-    display: grid;
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-    -moz-column-gap: 2rem;
-         column-gap: 2rem;
-    row-gap: 3rem;
-  }
-
-  @media (min-width: 768px) {
-    .three-column-tout .md\:container {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
   }
 }

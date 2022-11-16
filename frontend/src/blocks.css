@@ -44,4 +44,18 @@
   .free-text-block .inner img {
     @apply py-[1rem] md:py-0;
   }
+  .contact-info {
+    @apply w-full;
+    /* border: 3px solid red; */
+  }
+  .contact-info .container {
+    /* border: 3px solid blue; */
+    @apply grid grid-cols-1 md:grid-cols-2;
+  }
+  .contact-info .list {
+    /* border: 3px solid green; */
+  }
+  .contact-info .text {
+    @apply flex flex-col;
+  }
 }
