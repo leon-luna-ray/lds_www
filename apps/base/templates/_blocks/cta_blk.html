@@ -8,9 +8,17 @@
       <div class="block-content">
         <div class="text {% if self.reverse %}order-last{% endif %}">
           <div class="text-inner">
-            <h1>{{ self.title }}</h1>
-            <p>{{ self.text }}</p>
+            <div aria-hidden="true"></div>
+            <div class="text-col">
+              <h1>{{ self.title }}</h1>
+              <p>{{ self.text }}</p>
           </div>
+        </div>
+        <div class="icon">
+          <div aria-hidden="true"></div>
+          <svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="m24 40-2.1-2.15L34.25 25.5H8v-3h26.25L21.9 10.15 24 8l16 16Z"/></svg>
+        </div>
+
         </div>
         <div class="image">
           {% image self.image original alt=self.image.alt_text %}

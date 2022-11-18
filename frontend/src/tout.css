@@ -29,7 +29,13 @@
       .three-column-tout {
         @apply w-full px-[2rem] py-[2rem] md:py-[5rem] text-white;
       }
-      .three-column-tout .container {
+      .three-column-tout .intro {
+        @apply pb-[4rem] text-center;
+      }
+      .three-column-tout .intro h1{
+        @apply text-3xl font-medium;
+      }
+      .three-column-tout .columns {
         @apply grid grid-cols-1 md:grid-cols-3 gap-x-[2rem] gap-y-[3rem];
       }
       .three-column-tout .tout-column {
