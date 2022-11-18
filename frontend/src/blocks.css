@@ -45,17 +45,25 @@
     @apply py-[1rem] md:py-0;
   }
   .contact-info {
-    @apply w-full;
+    @apply w-full py-[2rem];
     /* border: 3px solid red; */
   }
   .contact-info .container {
     /* border: 3px solid blue; */
-    @apply grid grid-cols-1 md:grid-cols-2;
+    @apply grid grid-cols-1 md:grid-cols-2 gap-y-[2rem];
   }
   .contact-info .list {
     /* border: 3px solid green; */
   }
+  .contact-info .map {
+    /* @apply flex flex-col ; */
+    @apply shrink;
+  }
   .contact-info .text {
-    @apply flex flex-col;
+    /* border: 3px solid yellowgreen; */
+    @apply flex flex-col justify-evenly gap-y-[1rem] text-lg;
+  }
+  .contact-info .map {
+    @apply w-[50%] md:p-[2rem];
   }
 }

@@ -119,14 +119,15 @@ class ThreeColumnToutBlock(StructBlock):
 
 
 class ContactInfoBlock(StructBlock):
+    text_title = CharBlock()
+    text = RichTextBlock()
     list_title = CharBlock()
     list = StreamBlock([
-        ('day', TitleWithTextBlock())
+        ('item', TitleWithTextBlock())
     ],
         block_counts={
-        'day': {'min_num': 7, 'max_num': 7}
+        'item': {'min_num': 7, 'max_num': 7}
     })
-    address = TextBlock()
     
     class Meta:
         template = '_blocks/contact_info.html'
