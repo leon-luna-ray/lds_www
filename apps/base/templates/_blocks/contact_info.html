@@ -1,8 +1,10 @@
 {% load wagtailcore_tags  %}
 
 <div class="contact-info">
-  <div class="container">
-
+  <div class="container intro">
+    {{ self.intro|richtext }}
+  </div>
+  <div class="container content">
     <div class="text">
       <div class="address">
         <h2>{{ self.text_title }}</h2>

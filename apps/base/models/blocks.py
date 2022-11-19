@@ -119,6 +119,7 @@ class ThreeColumnToutBlock(StructBlock):
 
 
 class ContactInfoBlock(StructBlock):
+    intro = RichTextBlock()
     text_title = CharBlock()
     text = RichTextBlock()
     list_title = CharBlock()
