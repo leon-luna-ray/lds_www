@@ -50,14 +50,26 @@
   }
   .contact-info .container {
     /* border: 3px solid blue; */
-    @apply grid grid-cols-1 md:grid-cols-2 gap-y-[2rem];
+    @apply grid grid-cols-1 md:grid-cols-3 gap-y-[2rem];
   }
-  .contact-info .list {
+  .contact-info .list  .item-title {
     /* border: 3px solid green; */
   }
+  .contact-info h2 {
+    @apply pb-[1rem];
+  }
+  .contact-info .list li {
+    @apply flex justify-evenly;
+  }
+  .contact-info .list li div {
+    @apply w-full;
+  }
+  .contact-info .list li div:first-child {
+    @apply basis-1/3;
+  }
   .contact-info .map {
-    /* @apply flex flex-col ; */
-    @apply shrink;
+    /* border: 3px solid purple; */
+    @apply hidden md:block md:col-span-2;
   }
   .contact-info .text {
     /* border: 3px solid yellowgreen; */
