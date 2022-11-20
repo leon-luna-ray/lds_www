@@ -689,9 +689,11 @@ footer {
   line-height: 1rem;
 }
 
-.block-y-padding {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+@media (min-width: 768px) {
+  .block-y-padding {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
 }
 
 .sections-block {
@@ -957,10 +959,6 @@ footer {
   flex-direction: column;
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
-}
-
-.link-list-block .list-item:hover {
-  cursor: pointer;
 }
 
 .dark .link-list-block .list-item {
