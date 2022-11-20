@@ -101,7 +101,7 @@ class LinkListItemBlock(StructBlock):
         required=True,
     )
     title = CharBlock()
-    text = TextBlock(required=False)
+    text = RichTextBlock(required=False)
     image = ImageChooserBlock()
 
     def get_context(self, value, parent_context=None):
@@ -114,7 +114,7 @@ class LinkListItemBlock(StructBlock):
         return context
 
     class Meta:
-        template = '_blocks/link_list_item_blk.html'
+        template = '_blocks/list_list_item_blk.html'
 
 
 class LinkListBlock(StructBlock):

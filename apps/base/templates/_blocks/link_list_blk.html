@@ -1,14 +1,16 @@
-{% load static wagtailcore_tags wagtailimages_tags %}
+{% load wagtailcore_tags %}
 
-<div class="link-list-block">
-    {{ self.itnro|richtext }}
-    <ul>
-    {% for item in self.list_items  %}
-        <li>
-            <h1>{{ item.title }}</h1>
-            <p>{{ item.text }}</p>
-            {% image item.image width-400 %}
-        </li>
-    {% endfor %}
-    </ul>
+<div class="link-list-block block-y-padding">
+    <div class="inner md:container">
+        {% if self.intro %}
+        <div class="intro">
+            {{ self.intro|richtext }}
+        </div>
+        {% endif %}
+        <ul class="link-list">
+        {% for list_item in self.list_items  %}
+            {% include_block list_item %}
+        {% endfor %}
+        </ul>
+    </div>
 </div>
