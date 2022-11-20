@@ -1,0 +1,9 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+
+<li class="list-item">
+  <div class="image">{% image self.image width-400 %}</div>
+  <div class="text">
+    <h2>{{ self.title }}</h2>
+    <p>{{ self.text|richtext }}</p>
+  </div>
+</li>

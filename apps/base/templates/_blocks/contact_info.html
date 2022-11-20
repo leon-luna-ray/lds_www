@@ -1,21 +1,36 @@
 {% load wagtailcore_tags  %}
 
 <div class="contact-info">
-  <div class="container">
+  <div class="container intro">
+    {{ self.intro|richtext }}
+  </div>
+  <div class="container content">
     <div class="text">
       <div class="address">
         <h2>{{ self.text_title }}</h2>
         {{ self.text|richtext }}
       </div>
-      <h2>{{ self.list_title }}</21>
-      <ul>
-        {% for item in self.list %}
-        <li><span>{{ item.value.title }}</span> <span>{{ item.value.text }}</span></li>
-        {% endfor %}
-      </ul>
+      <div class="list">
+        <h2>{{ self.list_title }}</21>
+        <ul>
+          {% for item in self.list %}
+          <li>
+            <div>
+              {{ item.value.title }}
+            </div>
+            <div>
+              {{ item.value.text }}
+            </div>
+
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
     </div>
+
     <div class="map">
       {% include '_blocks/map_block.html' %}
     </div>
+
   </div>
 </div>
