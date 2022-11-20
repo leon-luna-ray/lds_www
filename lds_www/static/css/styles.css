@@ -901,7 +901,8 @@ footer {
 @media (min-width: 768px) {
   .contact-info .map {
     grid-column: span 2 / span 2;
-    display: block;
+    display: flex;
+    justify-content: flex-end;
   }
 }
 
@@ -912,10 +913,6 @@ footer {
   row-gap: 1rem;
   font-size: 1.125rem;
   line-height: 1.75rem;
-}
-
-.contact-info .map {
-  width: 50%;
 }
 
 @media (min-width: 768px) {

@@ -66,12 +66,12 @@
     @apply basis-1/3;
   }
   .contact-info .map {
-    @apply hidden md:block md:col-span-2;
+    @apply hidden md:flex md:justify-end md:col-span-2;
   }
   .contact-info .text {
     @apply flex flex-col justify-evenly gap-y-[1rem] text-lg;
   }
   .contact-info .map {
-    @apply w-[50%] md:p-[2rem];
+    @apply md:p-[2rem];
   }
 }
