@@ -23,4 +23,4 @@ class ServicesLandingPage(BasePageWithOptions):
     # config
     max_count = 1
     template = 'services/services_landing.html'
-    subpage_types = ['gallery.GalleryLandingPage']
+    # subpage_types = ['gallery.GalleryLandingPage']
