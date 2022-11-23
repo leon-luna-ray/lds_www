@@ -19,7 +19,7 @@ INSTALLED_APPS = [
     # Project Apps
     "apps.base",
     "apps.home",
-    # "apps.gallery",
+    "apps.image_gallery",
     "apps.services",
     "apps.search",
     "apps.site_settings",

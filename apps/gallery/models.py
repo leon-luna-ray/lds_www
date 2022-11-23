@@ -1,14 +1,13 @@
 from django.db import models
 from wagtail.fields import StreamField
 from wagtail.admin.panels import FieldPanel
+from wagtail.images.blocks import ImageChooserBlock
 from apps.base.models.pages import BasePageWithOptions
-from apps.base.models.blocks import BodySectionBlock
-
 
 # Services
-class ServicesLandingPage(BasePageWithOptions):
-    content = StreamField([
-        ('sections', BodySectionBlock())
+class ImageGallery(BasePageWithOptions):
+    images = StreamField([
+        ('image', ImageChooserBlock())
     ],
         blank=False,
         null=True,
@@ -17,10 +16,10 @@ class ServicesLandingPage(BasePageWithOptions):
     )
 
     content_panels = BasePageWithOptions.intro_with_image_panel + [
-        FieldPanel('content'),
+        FieldPanel('images'),
     ]
 
     # config
     max_count = 1
-    template = 'services/services_landing.html'
-    subpage_types = ['image_gallery.ImageGalleryPage']
+    # template = 'services/services_landing.html'
+    # subpage_types = ['gallery.GalleryLandingPage']
