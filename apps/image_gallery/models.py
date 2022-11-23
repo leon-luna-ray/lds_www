@@ -19,3 +19,4 @@ class ImageGalleryPage(BasePageWithOptions):
     ]
 
     template = 'image_gallery/image_gallery.html'
+    subpage_types = []

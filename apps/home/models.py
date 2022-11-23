@@ -65,6 +65,7 @@ class AboutPage(BasePageWithOptions):
 
     # config
     max_count = 1
+    subpage_types = []
     template = 'home/about.html'
 
 # Generic
@@ -85,4 +86,5 @@ class GenericPage(BasePageWithOptions):
 
     # config
     parent_page_types = ['home.HomePage']
+    subpage_types = []
     template = 'home/generic.html'
