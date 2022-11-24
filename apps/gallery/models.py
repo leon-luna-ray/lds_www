@@ -4,7 +4,6 @@ from wagtail.admin.panels import FieldPanel
 from wagtail.images.blocks import ImageChooserBlock
 from apps.base.models.pages import BasePageWithOptions
 
-# Services
 class ImageGallery(BasePageWithOptions):
     images = StreamField([
         ('image', ImageChooserBlock())
@@ -21,5 +20,5 @@ class ImageGallery(BasePageWithOptions):
 
     # config
     max_count = 1
-    # template = 'services/services_landing.html'
+    template = 'image_gallery/image_gallery.html'
     # subpage_types = ['gallery.GalleryLandingPage']
