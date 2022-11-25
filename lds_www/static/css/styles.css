@@ -504,6 +504,25 @@ li {
   }
 }
 
+.image-gallery .gallery .inner {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+@media (min-width: 768px) {
+  .image-gallery .gallery .inner {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+}
+
+.image-gallery .gallery img {
+  /* border: 4px solid orangered; */
+  aspect-ratio: 1 / 1;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 #site-header {
   z-index: 5;
   display: flex;

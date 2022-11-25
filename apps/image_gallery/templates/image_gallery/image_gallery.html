@@ -1,1 +1,18 @@
-<h1>Image Gallery</h1>
+{% extends "base/base.html" %} {% load wagtailcore_tags wagtailimages_tags %} 
+
+{% block content %}
+<div class="page image-gallery">
+    <div class="md:container">
+        <div class="text">
+            <h1>{{ page.title }}</h1>
+        </div>
+        <div class="gallery">
+            <div class="inner">
+                {% for image in self.images  %}
+                {% image image.value width-800 %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
