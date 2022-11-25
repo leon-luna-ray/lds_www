@@ -34,10 +34,6 @@ class HomePage(BasePage):
         use_json_field=False,
     )
 
-    # Link Block to other pages (block (image + text + page or url))
-    # Annoucments/promotions (block)
-    # Featured works (orderable)
-
     # config
     max_count = 1
     subpage_types = ['home.AboutPage', 'home.GenericPage','services.ServicesLandingPage']
