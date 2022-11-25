@@ -2,7 +2,7 @@
 
 <div class="link-card card v1">
 {% for link in self.link  %}
-  <a href="{{ link_url }}" {% if link.block_type == 'external_link' %}target="_blank"{% endif %}">
+  <a href="#">
     {% image self.image height-300 alt=self.image.alt %}
     <div class="content flex justify-between relative bg-gradient">
       <div class="text">
