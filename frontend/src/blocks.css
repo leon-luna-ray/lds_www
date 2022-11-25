@@ -92,6 +92,9 @@
   .link-list-block .image img {
     @apply w-full aspect-video md:aspect-square object-cover;
   }
+  .link-list-block .arrow {
+    @apply flex flex-col justify-end pb-4 hover:cursor-pointer;
+  }
   .link-list-block .text {
     @apply flex flex-col gap-y-2 md:justify-end w-full md:w-[50%] p-[1rem];
   }

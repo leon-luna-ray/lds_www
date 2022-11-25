@@ -985,6 +985,17 @@ footer {
   }
 }
 
+.link-list-block .arrow {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 1rem;
+}
+
+.link-list-block .arrow:hover {
+  cursor: pointer;
+}
+
 .link-list-block .text {
   display: flex;
   width: 100%;
