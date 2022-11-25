@@ -36,7 +36,7 @@ class HomePage(BasePage):
 
     # config
     max_count = 1
-    subpage_types = ['home.AboutPage', 'home.GenericPage','services.ServicesLandingPage']
+    subpage_types = ['home.AboutPage', 'home.GenericPage','services.ServicesLandingPage', 'image_gallery.ImageGalleryPage']
     content_panels = BasePage.content_panels + [
         FieldPanel('banner_carousel'),
         FieldPanel('content'),
