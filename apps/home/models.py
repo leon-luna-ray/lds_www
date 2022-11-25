@@ -34,14 +34,10 @@ class HomePage(BasePage):
         use_json_field=False,
     )
 
-    # Link Block to other pages (block (image + text + page or url))
-    # Annoucments/promotions (block)
-    # Featured works (orderable)
-
     # config
     max_count = 1
     subpage_types = ['home.AboutPage', 'home.GenericPage','services.ServicesLandingPage']
-    content_panels = Page.content_panels + [
+    content_panels = BasePage.content_panels + [
         FieldPanel('banner_carousel'),
         FieldPanel('content'),
     ]
@@ -65,6 +61,7 @@ class AboutPage(BasePageWithOptions):
 
     # config
     max_count = 1
+    subpage_types = ['image_gallery.ImageGalleryPage']
     template = 'home/about.html'
 
 # Generic
@@ -84,5 +81,5 @@ class GenericPage(BasePageWithOptions):
 
 
     # config
-    parent_page_types = ['home.HomePage']
+    subpage_types = ['image_gallery.ImageGalleryPage']
     template = 'home/generic.html'

@@ -59,15 +59,6 @@ class LinkCardBlock(StructBlock):
     text = TextBlock(required=False)
     image = ImageChooserBlock()
 
-    def get_context(self, value, parent_context=None):
-        context = super().get_context(value, parent_context=parent_context)
-        for block in value['link']:
-            if block.block_type not in 'page_link':
-                context['link_url'] = block
-            else:
-                context['link_url'] = block.value.url
-        return context
-
     class Meta:
         template = '_blocks/link_card_blk.html'
 
@@ -103,15 +94,6 @@ class LinkListItemBlock(StructBlock):
     title = CharBlock()
     text = RichTextBlock(required=False)
     image = ImageChooserBlock()
-
-    def get_context(self, value, parent_context=None):
-        context = super().get_context(value, parent_context=parent_context)
-        for block in value['link']:
-            if block.block_type not in 'page_link':
-                context['link_url'] = block
-            else:
-                context['link_url'] = block.value.url
-        return context
 
     class Meta:
         template = '_blocks/list_list_item_blk.html'
@@ -193,15 +175,6 @@ class CallToActionBlock(ImageWithTextBlock):
         required=True,
     )
     reverse = BooleanBlock(required=False)
-
-    def get_context(self, value, parent_context=None):
-        context = super().get_context(value, parent_context=parent_context)
-        for block in value['link']:
-            if block.block_type not in 'page_link':
-                context['link_url'] = block
-            else:
-                context['link_url'] = block.value.url
-        return context
 
     class Meta:
         template = '_blocks/cta_blk.html'

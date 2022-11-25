@@ -1,6 +1,6 @@
 @layer base {
   .block-y-padding {
-    @apply py-[2rem];
+    @apply md:py-[2rem];
   }
   .sections-block {
     @apply justify-center;
@@ -87,10 +87,13 @@
     @apply flex flex-col md:gap-y-[1rem];
   }
   .link-list-block .list-item {
-    @apply flex flex-col md:flex-row hover:cursor-pointer bg-gray-100 dark:bg-gray-700;
+    @apply flex flex-col md:flex-row bg-gray-100 dark:bg-gray-700;
   }
   .link-list-block .image img {
     @apply w-full aspect-video md:aspect-square object-cover;
+  }
+  .link-list-block .arrow {
+    @apply flex flex-col justify-end pb-4 hover:cursor-pointer;
   }
   .link-list-block .text {
     @apply flex flex-col gap-y-2 md:justify-end w-full md:w-[50%] p-[1rem];
