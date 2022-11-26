@@ -33,15 +33,16 @@
             {% main_menu max_levels=1 template='components/nav.html'%}
 
         </header>
-
-        <main>
-            {% block content %}{% endblock %}
-        </main>
-        {% comment %} TODO add footer tag + component {% endcomment %}
-        <footer>
-            {% include 'components/footer.html' %}
-        </footer>
-
+        <div class="space-between" aria-hidden="true">
+            <main>
+                {% block content %}{% endblock %}
+            </main>
+            {% comment %} TODO add footer tag + component {% endcomment %}
+            <footer>
+                <div></div>
+                {% include 'components/footer.html' %}
+            </footer>
+        </div>
         {# Global javascript #}
         <script type="text/javascript" src="{% static 'js/jquery/jquery.min.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/owl_carousel/owl.carousel.min.js' %}"></script>

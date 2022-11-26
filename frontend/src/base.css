@@ -2,9 +2,6 @@
     body {
         @apply text-slate-900 dark:bg-gray-900 dark:text-gray-200 h-full;
     }
-    /* main {
-        @apply 
-    } */
     h1 {
         @apply text-3xl font-bold;
     }
@@ -25,5 +22,8 @@
     }
     .bg-gradient {
         @apply bg-gradient-to-r from-gray-100  to-slate-200 dark:from-gray-800 dark:to-gray-700;
+    }
+    .space-between {
+        @apply flex flex-col justify-between h-screen;
     }
 }

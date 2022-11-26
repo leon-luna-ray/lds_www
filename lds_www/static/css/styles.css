@@ -429,10 +429,6 @@ body {
   color: rgb(229 231 235 / var(--tw-text-opacity));
 }
 
-/* main {
-        @apply 
-    } */
-
 h1 {
   font-size: 1.875rem;
   line-height: 2.25rem;
@@ -491,6 +487,13 @@ li {
   --tw-gradient-to: rgb(41 41 41 / 0);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
   --tw-gradient-to: #363636;
+}
+
+.space-between {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .page {
