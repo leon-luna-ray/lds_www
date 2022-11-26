@@ -1,4 +1,5 @@
-{% extends "base/base.html" %} {% load wagtailcore_tags wagtailimages_tags %} 
+{% extends "base/base.html" %} 
+{% load wagtailcore_tags wagtailimages_tags %} 
 
 {% block content %}
 <div class="page image-gallery">
@@ -9,11 +10,10 @@
         </div>
         <div class="gallery">
             <div class="inner">
-                {% for image in self.images  %}
-                {% image image.value width-800 %}
-                {% endfor %}
+                {% include 'components/lightgallery.html' with images=self.images %}
             </div>
         </div>
     </div>
 </div>
 {% endblock %}
+

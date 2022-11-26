@@ -1,0 +1,18 @@
+{% load static wagtailcore_tags wagtailimages_tags %}
+
+{% block content %}
+    <div id="lightgallery" class="gallery-grid">
+        {% for gallery_image in images %}
+            {% image gallery_image.value width-800 %}
+        {% endfor %}
+    </div>
+{% endblock  %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/lightgallery/lightgallery-bundle.min.css' %}">
+{% endblock %}
+
+{% block extra_js %}
+    <script src="{% static 'js/lightgallery/lightgallery.min.js' %}"></script>
+    <script src="{% static 'js/gallery.js' %}"></script>
+{% endblock  %}
